@@ -1,0 +1,772 @@
+/* ===========================================
+        DEPOSIT PAGE
+=========================================== */
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:'Poppins',sans-serif;
+
+}
+
+body{
+
+    background:#f4f7fb;
+
+    color:#333;
+
+}
+
+a{
+
+    text-decoration:none;
+
+}
+
+.dashboard{
+
+    display:flex;
+
+    min-height:100vh;
+
+}
+
+.main-content{
+
+    flex:1;
+
+    margin-left:270px;
+
+    padding:30px;
+
+}
+
+/* ===========================================
+        DEPOSIT SECTION
+=========================================== */
+
+.deposit-section{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:30px;
+
+    margin-top:20px;
+
+}
+
+/* ===========================================
+        DEPOSIT FORM
+=========================================== */
+
+.deposit-card{
+
+    background:#ffffff;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.card-header{
+
+    margin-bottom:30px;
+
+}
+
+.card-header h2{
+
+    color:#003366;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:10px;
+
+}
+
+.card-header i{
+
+    color:#0056d6;
+
+}
+
+.card-header p{
+
+    color:#666;
+
+}
+
+.deposit-form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:22px;
+
+}
+
+.form-row{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:20px;
+
+}
+
+.form-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.form-group label{
+
+    margin-bottom:8px;
+
+    font-weight:600;
+
+    color:#003366;
+
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+
+    padding:14px 16px;
+
+    border:1px solid #d9d9d9;
+
+    border-radius:12px;
+
+    outline:none;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+
+    border-color:#0056d6;
+
+    box-shadow:0 0 10px rgba(0,86,214,.2);
+
+}
+
+.form-group textarea{
+
+    resize:none;
+
+}
+
+.deposit-btn{
+
+    margin-top:10px;
+
+    border:none;
+
+    background:#0056d6;
+
+    color:#ffffff;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.deposit-btn:hover{
+
+    background:#003366;
+
+    transform:translateY(-2px);
+
+}
+
+/* ===========================================
+        DEPOSIT SUMMARY
+=========================================== */
+
+.summary-card{
+
+    background:#ffffff;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    height:fit-content;
+
+}
+
+.summary-card h2{
+
+    color:#003366;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:25px;
+
+}
+
+.summary-card i{
+
+    color:#0056d6;
+
+}
+
+.summary-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:16px 0;
+
+    border-bottom:1px solid #eeeeee;
+
+}
+
+.summary-item:last-child{
+
+    border-bottom:none;
+
+}
+
+.summary-item span{
+
+    color:#666;
+
+}
+
+.summary-item strong{
+
+    color:#003366;
+
+    font-size:16px;
+
+}
+
+.success{
+
+    color:#16a34a;
+
+}
+
+/* ===========================================
+        RECENT DEPOSITS
+=========================================== */
+
+.recent-deposits{
+
+    margin-top:35px;
+
+    background:#ffffff;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.section-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+}
+
+.section-header h2{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:#003366;
+
+}
+
+.section-header h2 i{
+
+    color:#0056d6;
+
+}
+
+.view-all{
+
+    background:#0056d6;
+
+    color:#ffffff;
+
+    padding:10px 18px;
+
+    border-radius:30px;
+
+    transition:.3s;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+.view-all:hover{
+
+    background:#003366;
+
+}
+
+.deposit-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+.deposit-table thead{
+
+    background:#0056d6;
+
+    color:#ffffff;
+
+}
+
+.deposit-table th{
+
+    padding:16px;
+
+    text-align:left;
+
+    font-weight:600;
+
+}
+
+.deposit-table td{
+
+    padding:18px 16px;
+
+    border-bottom:1px solid #eeeeee;
+
+}
+
+.deposit-table tbody tr{
+
+    transition:.3s;
+
+}
+
+.deposit-table tbody tr:hover{
+
+    background:#f5f9ff;
+
+}
+
+.deposit-table tbody tr:last-child td{
+
+    border-bottom:none;
+
+}
+
+/* Status */
+
+.success-badge{
+
+    background:#d1fae5;
+
+    color:#047857;
+
+    padding:7px 16px;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+.pending-badge{
+
+    background:#fef3c7;
+
+    color:#b45309;
+
+    padding:7px 16px;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+.failed-badge{
+
+    background:#fee2e2;
+
+    color:#dc2626;
+
+    padding:7px 16px;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+
+/* ===========================================
+        DEPOSIT TIPS
+=========================================== */
+
+.deposit-tips{
+
+    margin-top:35px;
+
+}
+
+.deposit-tips h2{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:#003366;
+
+    margin-bottom:25px;
+
+}
+
+.deposit-tips h2 i{
+
+    color:#f59e0b;
+
+}
+
+.tips-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+}
+
+.tip-card{
+
+    background:#ffffff;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.tip-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 18px 35px rgba(0,0,0,.12);
+
+}
+
+.tip-card i{
+
+    font-size:45px;
+
+    color:#0056d6;
+
+    margin-bottom:20px;
+
+}
+
+.tip-card h3{
+
+    color:#003366;
+
+    margin-bottom:15px;
+
+}
+
+.tip-card p{
+
+    color:#666;
+
+    line-height:1.8;
+
+}
+
+/* ===========================================
+        FAQ SECTION
+=========================================== */
+
+.faq-section{
+
+    margin-top:40px;
+
+}
+
+.faq-section h2{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:#003366;
+
+    margin-bottom:25px;
+
+}
+
+.faq-section h2 i{
+
+    color:#0056d6;
+
+}
+
+.faq-container{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+.faq-card{
+
+    background:#ffffff;
+
+    padding:25px 30px;
+
+    border-radius:18px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.faq-card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 15px 30px rgba(0,0,0,.12);
+
+}
+
+.faq-card h3{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:#003366;
+
+    margin-bottom:15px;
+
+    font-size:18px;
+
+}
+
+.faq-card h3 i{
+
+    color:#0056d6;
+
+    font-size:15px;
+
+}
+
+.faq-card p{
+
+    color:#666;
+
+    line-height:1.8;
+
+}
+
+
+/* ===========================================
+        RESPONSIVE
+=========================================== */
+
+@media(max-width:1200px){
+
+.deposit-section{
+
+grid-template-columns:1fr;
+
+}
+
+.tips-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.dashboard-footer{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:992px){
+
+.form-row{
+
+grid-template-columns:1fr;
+
+}
+
+.tips-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.deposit-table{
+
+display:block;
+
+overflow-x:auto;
+
+white-space:nowrap;
+
+}
+
+.main-content{
+
+margin-left:90px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.main-content{
+
+margin-left:0;
+
+padding:20px;
+
+}
+
+.top-navbar{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:20px;
+
+}
+
+.top-right{
+
+width:100%;
+
+flex-wrap:wrap;
+
+}
+
+.search-box{
+
+width:100%;
+
+}
+
+.deposit-card,
+.summary-card,
+.recent-deposits,
+.tip-card,
+.faq-card{
+
+padding:20px;
+
+}
+
+.footer-left,
+.footer-center,
+.footer-right{
+
+text-align:center;
+
+}
+
+.footer-left h3,
+.footer-right p{
+
+justify-content:center;
+
+}
+
+}

@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Transfer Money | SecureBank</title>
+
+  <link rel="stylesheet" href="CSS/dashboard.css">
+
+  <link rel="stylesheet" href="CSS/transfer.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <div class="dashboard">
+
+      <aside class="sidebar">
+
+        <div class="logo">
+
+          <i class="fa-solid fa-building-columns"></i>
+
+          <h2>SecureBank</h2>
+
+        </div>
+
+        <ul>
+
+          <li>
+
+            <a href="dashboard.html">
+
+              <i class="fa-solid fa-house"></i>
+
+              Dashboard
+
+            </a>
+
+          </li>
+
+          <li>
+
+            <a href="deposit.html">
+
+              <i class="fa-solid fa-money-bill-wave"></i>
+
+              Deposit
+
+            </a>
+
+          </li>
+
+          <li>
+
+            <a href="withdraw.html">
+
+              <i class="fa-solid fa-wallet"></i>
+
+              Withdraw
+
+            </a>
+
+          </li>
+
+          <li class="active">
+
+            <a href="transfer.html">
+
+              <i class="fa-solid fa-arrow-right-arrow-left"></i>
+
+              Transfer
+
+            </a>
+
+          </li>
+
+          <li>
+
+            <a href="transaction.html">
+
+              <i class="fa-solid fa-clock-rotate-left"></i>
+
+              Transactions
+
+            </a>
+
+          </li>
+
+          <li>
+
+            <a href="profile.html">
+
+              <i class="fa-solid fa-user"></i>
+
+              Profile
+
+            </a>
+
+          </li>
+
+          <li>
+
+            <a href="settings.html">
+
+              <i class="fa-solid fa-gear"></i>
+
+              Settings
+
+            </a>
+
+          </li>
+
+          <li>
+
+            <a href="contact.html">
+
+              <i class="fa-solid fa-headset"></i>
+
+              Contact Us
+
+            </a>
+
+          </li>
+
+        </ul>
+
+        <div class="logout">
+
+          <a href="login.html">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            Logout
+
+          </a>
+
+        </div>
+
+      </aside>
+
+    <main class="main-content">
+
+<header class="top-navbar">
+
+    <div class="welcome">
+
+        <h2>Transfer Money</h2>
+
+        <p>
+
+            Send money securely to your beneficiaries.
+
+        </p>
+
+    </div>
+
+    <div class="top-right">
+
+        <div class="search-box">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input type="text"
+                   placeholder="Search transfers...">
+
+        </div>
+
+        <div class="icon-box">
+
+            <i class="fa-regular fa-bell"></i>
+
+            <span class="badge">4</span>
+
+        </div>
+
+        <div class="icon-box">
+
+            <i class="fa-regular fa-envelope"></i>
+
+            <span class="badge">6</span>
+
+        </div>
+
+        <div class="user-profile">
+
+            <img src="images/customer1.jpg"
+                 alt="Customer">
+
+            <div>
+
+                <h4>Ratan Ahire</h4>
+
+                <small>Premium Customer</small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!-- ==========================================
+            TRANSFER SECTION
+========================================== -->
+
+<section class="transfer-section">
+
+    <!-- Transfer Form -->
+
+    <div class="transfer-card">
+
+        <div class="card-header">
+
+            <h2>
+
+                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+
+                Transfer Money
+
+            </h2>
+
+            <p>
+
+                Transfer funds safely and securely to your beneficiaries.
+
+            </p>
+
+        </div>
+
+        <form class="transfer-form">
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label>From Account</label>
+
+                    <select>
+
+                        <option>Savings Account - XXXX3244</option>
+
+                        <option>Current Account - XXXX5487</option>
+
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Beneficiary Name</label>
+
+                    <input type="text"
+                           placeholder="Enter Beneficiary Name">
+
+                </div>
+
+            </div>
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label>Account Number</label>
+
+                    <input type="text"
+                           placeholder="Beneficiary Account Number">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>IFSC Code</label>
+
+                    <input type="text"
+                           placeholder="SBIN0001234">
+
+                </div>
+
+            </div>
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label>Transfer Type</label>
+
+                    <select>
+
+                        <option>IMPS</option>
+
+                        <option>NEFT</option>
+
+                        <option>RTGS</option>
+
+                        <option>UPI</option>
+
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Amount</label>
+
+                    <input type="number"
+                           placeholder="₹ Enter Amount">
+
+                </div>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Remarks</label>
+
+                <textarea rows="4"
+                          placeholder="Purpose of transfer"></textarea>
+
+            </div>
+
+            <button class="transfer-btn">
+
+                <i class="fa-solid fa-paper-plane"></i>
+
+                Transfer Money
+
+            </button>
+
+        </form>
+
+    </div>
+
+    <!-- Summary -->
+
+    <div class="summary-card">
+
+        <h2>
+
+            <i class="fa-solid fa-chart-line"></i>
+
+            Transfer Summary
+
+        </h2>
+
+        <div class="summary-item">
+
+            <span>Available Balance</span>
+
+            <strong>₹2,48,560</strong>
+
+        </div>
+
+        <div class="summary-item">
+
+            <span>Today's Transfers</span>
+
+            <strong>₹18,000</strong>
+
+        </div>
+
+        <div class="summary-item">
+
+            <span>Daily Limit</span>
+
+            <strong>₹5,00,000</strong>
+
+        </div>
+
+        <div class="summary-item">
+
+            <span>Remaining Limit</span>
+
+            <strong>₹4,82,000</strong>
+
+        </div>
+
+        <div class="summary-item">
+
+            <span>Status</span>
+
+            <strong class="active-status">
+
+                Ready to Transfer
+
+            </strong>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+        FAVOURITE BENEFICIARIES
+========================================== -->
+
+<section class="beneficiary-section">
+
+    <div class="section-header">
+
+        <h2>
+
+            <i class="fa-solid fa-users"></i>
+
+            Favourite Beneficiaries
+
+        </h2>
+
+        <a href="#" class="view-all">
+
+            View All
+
+        </a>
+
+    </div>
+
+    <div class="beneficiary-grid">
+
+        <div class="beneficiary-card">
+
+            <img src="images/customer1.jpg" alt="Customer">
+
+            <h3>Amit Sharma</h3>
+
+            <p>ICICI Bank</p>
+
+            <button>Transfer</button>
+
+        </div>
+
+        <div class="beneficiary-card">
+
+            <img src="images/customer2.jpg" alt="Customer">
+
+            <h3>Priya Patel</h3>
+
+            <p>HDFC Bank</p>
+
+            <button>Transfer</button>
+
+        </div>
+
+        <div class="beneficiary-card">
+
+            <img src="images/customer3.jpg" alt="Customer">
+
+            <h3>Rahul Verma</h3>
+
+            <p>SBI</p>
+
+            <button>Transfer</button>
+
+        </div>
+
+        <div class="beneficiary-card">
+
+            <img src="images/customer4.jpg" alt="Customer">
+
+            <h3>Neha Joshi</h3>
+
+            <p>Axis Bank</p>
+
+            <button>Transfer</button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+            RECENT TRANSFERS
+========================================== -->
+
+<section class="recent-transfers">
+
+    <div class="section-header">
+
+        <h2>
+
+            <i class="fa-solid fa-clock-rotate-left"></i>
+
+            Recent Transfers
+
+        </h2>
+
+        <a href="transaction.html" class="view-all">
+
+            View All
+
+        </a>
+
+    </div>
+
+    <table class="transfer-table">
+
+        <thead>
+
+            <tr>
+
+                <th>Date</th>
+
+                <th>Beneficiary</th>
+
+                <th>Bank</th>
+
+                <th>Transfer Mode</th>
+
+                <th>Amount</th>
+
+                <th>Status</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr>
+
+                <td>22 Jul 2026</td>
+
+                <td>Amit Sharma</td>
+
+                <td>ICICI Bank</td>
+
+                <td>IMPS</td>
+
+                <td>₹15,000</td>
+
+                <td>
+
+                    <span class="success-badge">
+
+                        Successful
+
+                    </span>
+
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td>21 Jul 2026</td>
+
+                <td>Priya Patel</td>
+
+                <td>HDFC Bank</td>
+
+                <td>UPI</td>
+
+                <td>₹5,000</td>
+
+                <td>
+
+                    <span class="success-badge">
+
+                        Successful
+
+                    </span>
+
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td>20 Jul 2026</td>
+
+                <td>Rahul Verma</td>
+
+                <td>SBI</td>
+
+                <td>NEFT</td>
+
+                <td>₹25,000</td>
+
+                <td>
+
+                    <span class="pending-badge">
+
+                        Processing
+
+                    </span>
+
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td>18 Jul 2026</td>
+
+                <td>Neha Joshi</td>
+
+                <td>Axis Bank</td>
+
+                <td>RTGS</td>
+
+                <td>₹50,000</td>
+
+                <td>
+
+                    <span class="success-badge">
+
+                        Successful
+
+                    </span>
+
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td>17 Jul 2026</td>
+
+                <td>Rohit Mehta</td>
+
+                <td>Kotak Bank</td>
+
+                <td>IMPS</td>
+
+                <td>₹8,000</td>
+
+                <td>
+
+                    <span class="failed-badge">
+
+                        Failed
+
+                    </span>
+
+                </td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</section>
+
+<!-- ==========================================
+            TRANSFER TIPS
+========================================== -->
+
+<section class="transfer-tips">
+
+    <h2>
+
+        <i class="fa-solid fa-lightbulb"></i>
+
+        Safe Transfer Tips
+
+    </h2>
+
+    <div class="tips-grid">
+
+        <div class="tip-card">
+
+            <i class="fa-solid fa-user-check"></i>
+
+            <h3>Verify Beneficiary</h3>
+
+            <p>
+
+                Always verify the beneficiary's account number and IFSC code before making a transfer.
+
+            </p>
+
+        </div>
+
+        <div class="tip-card">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            <h3>Protect Your OTP</h3>
+
+            <p>
+
+                Never share your OTP, PIN, or Internet Banking password with anyone.
+
+            </p>
+
+        </div>
+
+        <div class="tip-card">
+
+            <i class="fa-solid fa-mobile-screen-button"></i>
+
+            <h3>Instant Transfers</h3>
+
+            <p>
+
+                Use IMPS or UPI for instant transfers, available 24×7.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+            FREQUENTLY ASKED QUESTIONS
+========================================== -->
+
+<section class="faq-section">
+
+    <h2>
+
+        <i class="fa-solid fa-circle-question"></i>
+
+        Frequently Asked Questions
+
+    </h2>
+
+    <div class="faq-container">
+
+        <div class="faq-card">
+
+            <h3>
+
+                <i class="fa-solid fa-plus"></i>
+
+                Which transfer method should I use?
+
+            </h3>
+
+            <p>
+
+                Use IMPS or UPI for instant transfers, NEFT for standard bank transfers,
+                and RTGS for high-value transactions.
+
+            </p>
+
+        </div>
+
+        <div class="faq-card">
+
+            <h3>
+
+                <i class="fa-solid fa-plus"></i>
+
+                Can I cancel a transfer?
+
+            </h3>
+
+            <p>
+
+                Instant transfers cannot be cancelled once processed.
+                Pending NEFT or RTGS transfers may be cancelled before processing.
+
+            </p>
+
+        </div>
+
+        <div class="faq-card">
+
+            <h3>
+
+                <i class="fa-solid fa-plus"></i>
+
+                Is there a daily transfer limit?
+
+            </h3>
+
+            <p>
+
+                Yes. Your daily transfer limit is ₹5,00,000.
+                The limit may vary depending on your account type.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+                FOOTER
+========================================== -->
+
+<footer class="dashboard-footer">
+
+    <div class="footer-left">
+
+        <h3>
+
+            <i class="fa-solid fa-building-columns"></i>
+
+            SecureBank
+
+        </h3>
+
+        <p>
+
+            SecureBank provides secure online banking with instant
+            money transfers, advanced security and 24×7 customer support.
+
+        </p>
+
+    </div>
+
+    <div class="footer-center">
+
+        <h4>Quick Links</h4>
+
+        <ul>
+
+            <li><a href="dashboard.html">Dashboard</a></li>
+
+            <li><a href="deposit.html">Deposit</a></li>
+
+            <li><a href="withdraw.html">Withdraw</a></li>
+
+            <li><a href="profile.html">Profile</a></li>
+
+        </ul>
+
+    </div>
+
+    <div class="footer-right">
+
+        <h4>Contact Us</h4>
+
+        <p>
+
+            <i class="fa-solid fa-phone"></i>
+
+            +91 98765 43210
+
+        </p>
+
+        <p>
+
+            <i class="fa-solid fa-envelope"></i>
+
+            support@securebank.com
+
+        </p>
+
+        <p>
+
+            <i class="fa-solid fa-location-dot"></i>
+
+            Mumbai, Maharashtra
+
+        </p>
+
+    </div>
+
+</footer>
+
+<div class="copyright">
+
+    © 2026 SecureBank. All Rights Reserved.
+
+</div>
+
+</main>
+
+</div>
+
+<script src="JS/transfer.js"></script>
+
+</body>
+
+</html>

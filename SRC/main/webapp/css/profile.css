@@ -1,0 +1,832 @@
+/* ======================================================
+                    PROFILE PAGE
+====================================================== */
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:'Poppins',sans-serif;
+
+}
+
+body{
+
+    background:#f4f7fb;
+
+    color:#333;
+
+}
+
+a{
+
+    text-decoration:none;
+
+}
+
+img{
+
+    display:block;
+
+    max-width:100%;
+
+}
+
+.main-content{
+
+    flex:1;
+
+    margin-left:270px;
+
+    padding:30px;
+
+}
+
+.profile-page{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:35px;
+
+}
+
+/* ======================================================
+                    PAGE TITLE
+====================================================== */
+
+.page-title{
+
+    margin-bottom:10px;
+
+}
+
+.page-title h2{
+
+    font-size:32px;
+
+    color:#003366;
+
+    font-weight:700;
+
+}
+
+.page-title p{
+
+    margin-top:8px;
+
+    color:#777;
+
+    font-size:15px;
+
+}
+
+/* ======================================================
+                PROFILE HEADER
+====================================================== */
+
+.profile-header{
+
+    background:#ffffff;
+
+    border-radius:20px;
+
+    padding:40px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.profile-card{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:40px;
+
+    flex-wrap:wrap;
+
+}
+
+/* ======================================================
+                PROFILE IMAGE
+====================================================== */
+
+.profile-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:30px;
+
+}
+
+.profile-image{
+
+    width:150px;
+
+    height:150px;
+
+    border-radius:50%;
+
+    overflow:hidden;
+
+    border:5px solid #0056d6;
+
+    box-shadow:0 10px 20px rgba(0,86,214,.2);
+
+}
+
+.profile-image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+/* ======================================================
+                PROFILE INFO
+====================================================== */
+
+.profile-info h2{
+
+    color:#003366;
+
+    margin-bottom:10px;
+
+    font-size:28px;
+
+}
+
+.profile-info p{
+
+    color:#666;
+
+    margin-bottom:8px;
+
+}
+
+.status{
+
+    display:inline-block;
+
+    margin-top:15px;
+
+    padding:8px 18px;
+
+    background:#d1fae5;
+
+    color:#047857;
+
+    border-radius:30px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+/* ======================================================
+                PROFILE BUTTONS
+====================================================== */
+
+.profile-actions{
+
+    display:flex;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+}
+
+.btn-primary{
+
+    border:none;
+
+    background:#0056d6;
+
+    color:#ffffff;
+
+    padding:14px 28px;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:all .3s ease;
+
+}
+
+.btn-primary:hover{
+
+    background:#003366;
+
+    transform:translateY(-2px);
+
+}
+
+.btn-secondary{
+
+    border:2px solid #0056d6;
+
+    background:#ffffff;
+
+    color:#0056d6;
+
+    padding:14px 28px;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:all .3s ease;
+
+}
+
+.btn-secondary:hover{
+
+    background:#0056d6;
+
+    color:#ffffff;
+
+}
+
+/* ======================================================
+                INFORMATION CARDS
+====================================================== */
+
+.profile-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:30px;
+
+}
+
+.info-card{
+
+    background:#ffffff;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:all .3s ease;
+
+}
+
+.info-card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+
+}
+
+.info-card h3{
+
+    color:#003366;
+
+    margin-bottom:25px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.info-card h3 i{
+
+    color:#0056d6;
+
+}
+
+/* ======================================================
+                INFORMATION TABLE
+====================================================== */
+
+.info-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+.info-table tr{
+
+    border-bottom:1px solid #eeeeee;
+
+}
+
+.info-table tr:last-child{
+
+    border-bottom:none;
+
+}
+
+.info-table td{
+
+    padding:16px 0;
+
+    font-size:15px;
+
+}
+
+.info-table td:first-child{
+
+    color:#666;
+
+    font-weight:500;
+
+    width:45%;
+
+}
+
+.info-table td:last-child{
+
+    color:#003366;
+
+    font-weight:600;
+
+    text-align:right;
+
+}
+
+/* ======================================================
+                ADDRESS SECTION
+====================================================== */
+
+.address-card{
+
+    background:#ffffff;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.address-card h3{
+
+    color:#003366;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:25px;
+
+}
+
+.address-card h3 i{
+
+    color:#0056d6;
+
+}
+
+.address-card p{
+
+    color:#666;
+
+    line-height:2;
+
+    font-size:15px;
+
+}
+
+/* ======================================================
+                PROFILE SUMMARY
+====================================================== */
+
+.summary-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+.summary-card{
+
+    background:#ffffff;
+
+    border-radius:18px;
+
+    padding:30px;
+
+    text-align:center;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:all .3s ease;
+
+}
+
+.summary-card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.summary-card i{
+
+    font-size:42px;
+
+    color:#0056d6;
+
+    margin-bottom:15px;
+
+}
+
+.summary-card h3{
+
+    color:#003366;
+
+    margin-bottom:8px;
+
+    font-size:24px;
+
+}
+
+.summary-card p{
+
+    color:#777;
+
+    font-size:14px;
+
+}
+
+/* ======================================================
+                    SECURITY SECTION
+====================================================== */
+
+.security-section{
+
+    margin-top:10px;
+
+}
+
+.security-section h2{
+
+    color:#003366;
+
+    margin-bottom:25px;
+
+}
+
+.security-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+}
+
+.security-card{
+
+    background:#ffffff;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    text-align:center;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:all .3s ease;
+
+}
+
+.security-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+
+}
+
+.security-card i{
+
+    font-size:50px;
+
+    color:#0056d6;
+
+    margin-bottom:20px;
+
+}
+
+.security-card h4{
+
+    color:#003366;
+
+    margin-bottom:15px;
+
+}
+
+.security-card p{
+
+    color:#666;
+
+    line-height:1.8;
+
+    margin-bottom:25px;
+
+}
+
+.security-card button{
+
+    border:none;
+
+    background:#0056d6;
+
+    color:#ffffff;
+
+    padding:14px 28px;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:all .3s ease;
+
+}
+
+.security-card button:hover{
+
+    background:#003366;
+
+}
+
+/* ======================================================
+                    FOOTER
+====================================================== */
+
+.dashboard-footer{
+
+    margin-top:50px;
+
+    background:linear-gradient(135deg,#003366,#0056d6);
+
+    color:#ffffff;
+
+    padding:45px;
+
+    border-radius:20px;
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr 1fr;
+
+    gap:40px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+}
+
+.footer-left h3{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:18px;
+
+    font-size:24px;
+
+}
+
+.footer-left p{
+
+    color:#dbeafe;
+
+    line-height:1.8;
+
+}
+
+.footer-center h4,
+.footer-right h4{
+
+    margin-bottom:18px;
+
+}
+
+.footer-center ul{
+
+    list-style:none;
+
+}
+
+.footer-center li{
+
+    margin:12px 0;
+
+}
+
+.footer-center a{
+
+    color:#dbeafe;
+
+    transition:all .3s ease;
+
+}
+
+.footer-center a:hover{
+
+    color:#ffffff;
+
+    padding-left:8px;
+
+}
+
+.footer-right p{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin:12px 0;
+
+    color:#dbeafe;
+
+}
+
+.footer-right i{
+
+    color:#ffd54f;
+
+}
+
+.copyright{
+
+    margin-top:25px;
+
+    text-align:center;
+
+    color:#777;
+
+    font-size:14px;
+
+}
+
+/* ======================================================
+                    RESPONSIVE
+====================================================== */
+
+@media (max-width:1200px){
+
+    .summary-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .security-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .dashboard-footer{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media (max-width:992px){
+
+    .main-content{
+
+        margin-left:90px;
+
+    }
+
+    .profile-card{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+    .profile-left{
+
+        flex-direction:column;
+
+    }
+
+    .profile-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .summary-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .security-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .main-content{
+
+        margin-left:0;
+
+        padding:20px;
+
+    }
+
+    .summary-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .profile-header,
+    .info-card,
+    .address-card{
+
+        padding:25px;
+
+    }
+
+    .profile-actions{
+
+        width:100%;
+
+        justify-content:center;
+
+    }
+
+    .btn-primary,
+    .btn-secondary{
+
+        width:100%;
+
+    }
+
+    .footer-left,
+    .footer-center,
+    .footer-right{
+
+        text-align:center;
+
+    }
+
+    .footer-left h3,
+    .footer-right p{
+
+        justify-content:center;
+
+    }
+
+}

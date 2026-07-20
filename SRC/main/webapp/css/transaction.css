@@ -1,0 +1,781 @@
+/* ===========================================
+        TRANSACTION PAGE
+=========================================== */
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:'Poppins',sans-serif;
+
+}
+
+body{
+
+    background:#f4f7fb;
+
+    color:#333;
+
+}
+
+.dashboard{
+
+    display:flex;
+
+    min-height:100vh;
+
+}
+
+.main-content{
+
+    flex:1;
+
+    margin-left:270px;
+
+    padding:30px;
+
+}
+
+/* ===========================================
+        STATISTICS
+=========================================== */
+
+.stats-section{
+
+    margin-top:20px;
+
+}
+
+.stats-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+.stat-card{
+
+    background:#ffffff;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    text-align:center;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.stat-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.stat-card i{
+
+    font-size:42px;
+
+    color:#0056d6;
+
+    margin-bottom:20px;
+
+}
+
+.stat-card h3{
+
+    color:#003366;
+
+    margin-bottom:10px;
+
+}
+
+.stat-card p{
+
+    color:#666;
+
+}
+
+/* ===========================================
+        FILTER
+=========================================== */
+
+.filter-section{
+
+    margin-top:35px;
+
+}
+
+.filter-card{
+
+    background:#ffffff;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.filter-row{
+
+    display:grid;
+
+    grid-template-columns:2fr 2fr 2fr 1fr;
+
+    gap:20px;
+
+}
+
+.filter-row input,
+.filter-row select{
+
+    padding:14px;
+
+    border:1px solid #dddddd;
+
+    border-radius:12px;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+.filter-row input:focus,
+.filter-row select:focus{
+
+    border-color:#0056d6;
+
+    box-shadow:0 0 10px rgba(0,86,214,.15);
+
+}
+
+.filter-btn{
+
+    background:#0056d6;
+
+    color:#ffffff;
+
+    border:none;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.filter-btn:hover{
+
+    background:#003366;
+
+}
+
+/* ===========================================
+        TRANSACTION TABLE
+=========================================== */
+
+.transaction-history{
+
+    margin-top:35px;
+
+    background:#ffffff;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.section-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+}
+
+.section-header h2{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    color:#003366;
+
+}
+
+.view-all{
+
+    background:#0056d6;
+
+    color:#ffffff;
+
+    padding:10px 18px;
+
+    border-radius:30px;
+
+    transition:.3s;
+
+}
+
+.view-all:hover{
+
+    background:#003366;
+
+}
+
+.transaction-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+.transaction-table thead{
+
+    background:#0056d6;
+
+    color:#ffffff;
+
+}
+
+.transaction-table th{
+
+    padding:16px;
+
+    text-align:left;
+
+}
+
+.transaction-table td{
+
+    padding:18px 16px;
+
+    border-bottom:1px solid #eeeeee;
+
+}
+
+.transaction-table tbody tr{
+
+    transition:.3s;
+
+}
+
+.transaction-table tbody tr:hover{
+
+    background:#f5f9ff;
+
+}
+
+/* ===========================================
+        TRANSACTION TAGS
+=========================================== */
+
+.deposit-tag{
+
+    background:#d1fae5;
+
+    color:#047857;
+
+    padding:7px 16px;
+
+    border-radius:30px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+.withdraw-tag{
+
+    background:#fee2e2;
+
+    color:#dc2626;
+
+    padding:7px 16px;
+
+    border-radius:30px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+.transfer-tag{
+
+    background:#dbeafe;
+
+    color:#1d4ed8;
+
+    padding:7px 16px;
+
+    border-radius:30px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+.credit{
+
+    color:#16a34a;
+
+    font-weight:700;
+
+}
+
+.debit{
+
+    color:#dc2626;
+
+    font-weight:700;
+
+}
+
+/* ===========================================
+        STATUS BADGES
+=========================================== */
+
+.success-badge{
+
+    background:#d1fae5;
+
+    color:#047857;
+
+    padding:7px 16px;
+
+    border-radius:30px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+.pending-badge{
+
+    background:#fef3c7;
+
+    color:#b45309;
+
+    padding:7px 16px;
+
+    border-radius:30px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+.failed-badge{
+
+    background:#fee2e2;
+
+    color:#dc2626;
+
+    padding:7px 16px;
+
+    border-radius:30px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+/* ===========================================
+        RECEIPT BUTTON
+=========================================== */
+
+.receipt-btn{
+
+    border:none;
+
+    background:#0056d6;
+
+    color:#ffffff;
+
+    padding:10px 18px;
+
+    border-radius:25px;
+
+    cursor:pointer;
+
+    font-size:14px;
+
+    transition:.3s;
+
+}
+
+.receipt-btn i{
+
+    margin-right:6px;
+
+}
+
+.receipt-btn:hover{
+
+    background:#003366;
+
+}
+
+/* ===========================================
+        DOWNLOAD STATEMENT
+=========================================== */
+
+.statement-section{
+
+    margin-top:40px;
+
+}
+
+.statement-card{
+
+    background:#ffffff;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.statement-left h2{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:#003366;
+
+    margin-bottom:12px;
+
+}
+
+.statement-left h2 i{
+
+    color:#0056d6;
+
+}
+
+.statement-left p{
+
+    color:#666;
+
+}
+
+.statement-buttons{
+
+    display:flex;
+
+    gap:15px;
+
+}
+
+.statement-buttons button{
+
+    border:none;
+
+    color:#ffffff;
+
+    padding:14px 24px;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.pdf-btn{
+
+    background:#dc2626;
+
+}
+
+.pdf-btn:hover{
+
+    background:#b91c1c;
+
+}
+
+.excel-btn{
+
+    background:#16a34a;
+
+}
+
+.excel-btn:hover{
+
+    background:#15803d;
+
+}
+
+.print-btn{
+
+    background:#0056d6;
+
+}
+
+.print-btn:hover{
+
+    background:#003366;
+
+}
+
+/* ===========================================
+        FAQ SECTION
+=========================================== */
+
+.faq-section{
+
+    margin-top:40px;
+
+}
+
+.faq-section h2{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:#003366;
+
+    margin-bottom:25px;
+
+}
+
+.faq-section h2 i{
+
+    color:#0056d6;
+
+}
+
+.faq-container{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+.faq-card{
+
+    background:#ffffff;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.faq-card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.faq-card h3{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:#003366;
+
+    margin-bottom:15px;
+
+}
+
+.faq-card h3 i{
+
+    color:#0056d6;
+
+}
+
+.faq-card p{
+
+    color:#666;
+
+    line-height:1.8;
+
+}
+
+
+/* ===========================================
+        RESPONSIVE
+=========================================== */
+
+@media(max-width:1200px){
+
+.stats-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.filter-row{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.statement-card{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:25px;
+
+}
+
+.dashboard-footer{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:992px){
+
+.main-content{
+
+margin-left:90px;
+
+}
+
+.stats-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.filter-row{
+
+grid-template-columns:1fr;
+
+}
+
+.transaction-table{
+
+display:block;
+
+overflow-x:auto;
+
+white-space:nowrap;
+
+}
+
+.statement-buttons{
+
+flex-wrap:wrap;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.main-content{
+
+margin-left:0;
+
+padding:20px;
+
+}
+
+.stat-card,
+.filter-card,
+.transaction-history,
+.statement-card,
+.faq-card{
+
+padding:20px;
+
+}
+
+.footer-left,
+.footer-center,
+.footer-right{
+
+text-align:center;
+
+}
+
+.footer-left h3,
+.footer-right p{
+
+justify-content:center;
+
+}
+
+.statement-left{
+
+text-align:center;
+
+width:100%;
+
+}
+
+.statement-buttons{
+
+justify-content:center;
+
+width:100%;
+
+}
+
+}

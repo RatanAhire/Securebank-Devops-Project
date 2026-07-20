@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>My Profile | SecureBank</title>
+
+    <link rel="stylesheet"
+          href="CSS/dashboard.css">
+
+    <link rel="stylesheet"
+          href="CSS/profile.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+        <!-- ================= SIDEBAR ================= -->
+
+        <aside class="sidebar">
+
+            <div class="logo">
+
+                <i class="fa-solid fa-building-columns"></i>
+
+                <h2>SecureBank</h2>
+
+            </div>
+
+            <ul>
+
+                <li>
+
+                    <a href="dashboard.html">
+
+                        <i class="fa-solid fa-house"></i>
+
+                        <span>Dashboard</span>
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="deposit.html">
+
+                        <i class="fa-solid fa-wallet"></i>
+
+                        <span>Deposit</span>
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="withdraw.html">
+
+                        <i class="fa-solid fa-money-bill-wave"></i>
+
+                        <span>Withdraw</span>
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="transfer.html">
+
+                        <i class="fa-solid fa-right-left"></i>
+
+                        <span>Transfer</span>
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="transaction.html">
+
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+
+                        <span>Transactions</span>
+
+                    </a>
+
+                </li>
+
+                <li class="active">
+
+                    <a href="profile.html">
+
+                        <i class="fa-solid fa-user"></i>
+
+                        <span>Profile</span>
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="settings.html">
+
+                        <i class="fa-solid fa-gear"></i>
+
+                        <span>Settings</span>
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="contact.html">
+
+                        <i class="fa-solid fa-headset"></i>
+
+                        <span>Contact Us </span>
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+            <div class="logout">
+
+                <a href="index.html">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    Logout
+
+                </a>
+
+            </div>
+
+        </aside>
+        <!-- ==========================================
+                MAIN CONTENT
+========================================== -->
+
+<main class="main-content">
+
+<header class="top-navbar">
+
+    <div class="welcome">
+
+        <h2>My Profile</h2>
+
+        <p>
+
+           Manage your personal information and account security.
+
+        </p>
+
+    </div>
+
+    <div class="top-right">
+
+        <div class="search-box">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input type="text"
+                   placeholder="Search">
+
+        </div>
+
+        <div class="icon-box">
+
+            <i class="fa-regular fa-bell"></i>
+
+            <span class="badge">3</span>
+
+        </div>
+
+        <div class="icon-box">
+
+            <i class="fa-regular fa-envelope"></i>
+
+            <span class="badge">3</span>
+
+        </div>
+
+        <div class="user-profile">
+
+            <img src="images/customer1.jpg"
+                 alt="Customer">
+
+            <div>
+
+                <h4>Ratan Ahire</h4>
+
+                <small>Premium Customer</small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!-- ==========================================
+                PROFILE HEADER
+========================================== -->
+
+<section class="profile-header">
+
+    <div class="profile-card">
+
+        <div class="profile-left">
+
+            <div class="profile-image">
+
+                <img src="images/customer1.jpg"
+                     alt="Customer">
+
+            </div>
+
+            <div class="profile-info">
+
+                <h2>
+
+                    Ratan Ahire
+
+                </h2>
+
+                <p>
+
+                    Customer ID :
+                    <strong>CUST102548</strong>
+
+                </p>
+
+                <p>
+
+                    Email :
+                    ratan@example.com
+
+                </p>
+
+                <p>
+
+                    Mobile :
+                    +91 98765 43210
+
+                </p>
+
+                <span class="status">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    Active Customer
+
+                </span>
+
+            </div>
+
+        </div>
+
+        <div class="profile-actions">
+
+            <button class="btn-primary">
+
+                <i class="fa-solid fa-user-pen"></i>
+
+                Edit Profile
+
+            </button>
+
+            <button class="btn-secondary">
+
+                <i class="fa-solid fa-key"></i>
+
+                Change Password
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+            PROFILE INFORMATION
+========================================== -->
+
+<div class="profile-grid">
+
+    <div class="info-card">
+
+        <h3>
+
+            <i class="fa-solid fa-user"></i>
+
+            Personal Information
+
+        </h3>
+
+        <table class="info-table">
+
+            <tr>
+
+                <td>Full Name</td>
+
+                <td>Ratan Ahire</td>
+
+            </tr>
+
+            <tr>
+
+                <td>Date of Birth</td>
+
+                <td>15 August 1999</td>
+
+            </tr>
+
+            <tr>
+
+                <td>Gender</td>
+
+                <td>Male</td>
+
+            </tr>
+
+            <tr>
+
+                <td>Nationality</td>
+
+                <td>Indian</td>
+
+            </tr>
+
+            <tr>
+
+                <td>PAN Number</td>
+
+                <td>ABCDE1234F</td>
+
+            </tr>
+
+            <tr>
+
+                <td>Aadhaar</td>
+
+                <td>XXXX XXXX 4589</td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+        <div class="info-card">
+
+        <h3>
+
+            <i class="fa-solid fa-building-columns"></i>
+
+            Account Information
+
+        </h3>
+
+        <table class="info-table">
+
+            <tr>
+
+                <td>Account Number</td>
+
+                <td>XXXX XXXX 5678</td>
+
+            </tr>
+
+            <tr>
+
+                <td>Account Type</td>
+
+                <td>Savings Account</td>
+
+            </tr>
+
+            <tr>
+
+                <td>Branch</td>
+
+                <td>Mumbai Main Branch</td>
+
+            </tr>
+
+            <tr>
+
+                <td>IFSC Code</td>
+
+                <td>SBIN0001234</td>
+
+            </tr>
+
+            <tr>
+
+                <td>Customer Since</td>
+
+                <td>January 2023</td>
+
+            </tr>
+
+            <tr>
+
+                <td>KYC Status</td>
+
+                <td>Verified ✅</td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+</div>
+
+<!-- ==========================================
+            ADDRESS INFORMATION
+========================================== -->
+
+<section class="address-card">
+
+    <h3>
+
+        <i class="fa-solid fa-location-dot"></i>
+
+        Address Information
+
+    </h3>
+
+    <p>
+
+        <strong>Residential Address :</strong><br>
+
+        Flat No. 203, Shree Ganesh Residency,<br>
+
+        MG Road, Nashik,<br>
+
+        Maharashtra - 422001,<br>
+
+        India
+
+    </p>
+
+    <br>
+
+    <p>
+
+        <strong>Communication Address :</strong><br>
+
+        Same as Residential Address
+
+    </p>
+
+</section>
+
+<!-- ==========================================
+            ACCOUNT SUMMARY
+========================================== -->
+
+<section class="summary-section">
+
+    <div class="summary-grid">
+
+        <div class="summary-card">
+
+            <i class="fa-solid fa-wallet"></i>
+
+            <h3>
+
+                ₹2,45,800
+
+            </h3>
+
+            <p>
+
+                Current Balance
+
+            </p>
+
+        </div>
+
+        <div class="summary-card">
+
+            <i class="fa-solid fa-arrow-right-arrow-left"></i>
+
+            <h3>
+
+                148
+
+            </h3>
+
+            <p>
+
+                Total Transactions
+
+            </p>
+
+        </div>
+
+        <div class="summary-card">
+
+            <i class="fa-solid fa-gift"></i>
+
+            <h3>
+
+                2,450
+
+            </h3>
+
+            <p>
+
+                Reward Points
+
+            </p>
+
+        </div>
+
+        <div class="summary-card">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            <h3>
+
+                98%
+
+            </h3>
+
+            <p>
+
+                Security Score
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+            SECURITY CENTER
+========================================== -->
+
+<section class="security-section">
+
+    <h2>
+
+        Security Center
+
+    </h2>
+
+    <div class="security-grid">
+
+        <div class="security-card">
+
+            <i class="fa-solid fa-key"></i>
+
+            <h4>
+
+                Change Password
+
+            </h4>
+
+            <p>
+
+                Update your password regularly to keep your SecureBank account
+                safe and secure.
+
+            </p>
+
+            <button id="changePasswordBtn">
+
+                Change Password
+
+            </button>
+
+        </div>
+
+        <div class="security-card">
+
+            <i class="fa-solid fa-mobile-screen-button"></i>
+
+            <h4>
+
+                Two-Factor Authentication
+
+            </h4>
+
+            <p>
+
+                Enable Two-Factor Authentication (2FA) for enhanced account
+                protection.
+
+            </p>
+
+            <button id="enable2FABtn">
+
+                Enable 2FA
+
+            </button>
+
+        </div>
+
+        <div class="security-card">
+
+            <i class="fa-solid fa-clock-rotate-left"></i>
+
+            <h4>
+
+                Login History
+
+            </h4>
+
+            <p>
+
+                Review your recent login activity and detect any unauthorized
+                access attempts.
+
+            </p>
+
+            <button id="loginHistoryBtn">
+
+                View History
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+                FOOTER
+========================================== -->
+
+<footer class="dashboard-footer">
+
+    <div class="footer-left">
+
+        <h3>
+
+            <i class="fa-solid fa-building-columns"></i>
+
+            SecureBank
+
+        </h3>
+
+        <p>
+
+            SecureBank provides secure, reliable, and modern banking
+            services with industry-leading security and customer support.
+
+        </p>
+
+    </div>
+
+    <div class="footer-center">
+
+        <h4>
+
+            Quick Links
+
+        </h4>
+
+        <ul>
+
+            <li><a href="dashboard.html">Dashboard</a></li>
+
+            <li><a href="transaction.html">Transactions</a></li>
+
+            <li><a href="settings.html">Settings</a></li>
+
+            <li><a href="contact.html">Contact Us</a></li>
+
+        </ul>
+
+    </div>
+
+    <div class="footer-right">
+
+        <h4>
+
+            Contact
+
+        </h4>
+
+        <p>
+
+            <i class="fa-solid fa-phone"></i>
+
+            +91 1800-123-4567
+
+        </p>
+
+        <p>
+
+            <i class="fa-solid fa-envelope"></i>
+
+            support@securebank.com
+
+        </p>
+
+        <p>
+
+            <i class="fa-solid fa-location-dot"></i>
+
+            Mumbai, Maharashtra
+
+        </p>
+
+    </div>
+
+</footer>
+
+<div class="copyright">
+
+    © 2026 SecureBank. All Rights Reserved.
+
+</div>
+
+</div>
+
+</main>
+
+</div>
+
+<script src="JS/profile.js"></script>
+
+</body>
+
+</html>

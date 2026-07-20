@@ -1,0 +1,404 @@
+/* ==========================================
+   RESET
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    background:#f4f8fc;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:30px;
+
+}
+
+/* ==========================================
+   MAIN CONTAINER
+========================================== */
+
+.login-container{
+
+    width:1200px;
+
+    max-width:100%;
+
+    background:#fff;
+
+    display:grid;
+
+    grid-template-columns:40% 60%;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.10);
+
+}
+
+/* ==========================================
+   LEFT PANEL
+========================================== */
+
+.left-panel{
+
+    background:#ffffff;
+
+    padding:50px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-right:1px solid #ececec;
+
+    text-align:center;
+
+}
+
+.left-panel img{
+
+    width:100%;
+
+    max-width:340px;
+
+    margin-bottom:25px;
+
+}
+
+.left-panel h1{
+
+    color:#003366;
+
+    font-size:34px;
+
+    margin-bottom:15px;
+
+}
+
+.left-panel p{
+
+    color:#666;
+
+    line-height:1.8;
+
+    margin-bottom:30px;
+
+}
+
+.features{
+
+    width:100%;
+
+}
+
+.features div{
+
+    background:#f8fbff;
+
+    padding:15px;
+
+    margin-bottom:15px;
+
+    border-radius:10px;
+
+    text-align:left;
+
+}
+
+.features i{
+
+    color:#0056d6;
+
+    margin-right:10px;
+
+}
+
+/* ==========================================
+   RIGHT PANEL
+========================================== */
+
+.right-panel{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:40px;
+
+}
+
+.login-card{
+
+    width:100%;
+
+    max-width:470px;
+
+}
+
+.logo{
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+}
+
+.logo i{
+
+    font-size:45px;
+
+    color:#0056d6;
+
+}
+
+.logo span{
+
+    display:block;
+
+    font-size:34px;
+
+    font-weight:700;
+
+    color:#003366;
+
+    margin-top:8px;
+
+}
+
+.login-card h2{
+
+    text-align:center;
+
+    color:#003366;
+
+    margin-bottom:8px;
+
+}
+
+.login-card p{
+
+    text-align:center;
+
+    color:#777;
+
+    margin-bottom:30px;
+
+}
+
+/* ==========================================
+   FORM
+========================================== */
+
+.form-group{
+
+    margin-bottom:20px;
+
+}
+
+.form-group label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    color:#555;
+
+    font-size:14px;
+
+}
+
+.form-group input{
+
+    width:100%;
+
+    padding:14px;
+
+    border:1px solid #d7d7d7;
+
+    border-radius:10px;
+
+    font-size:15px;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+.form-group input:focus{
+
+    border-color:#0056d6;
+
+    box-shadow:0 0 0 3px rgba(0,86,214,.10);
+
+}
+
+/* ==========================================
+   PASSWORD
+========================================== */
+
+.password-box{
+
+    position:relative;
+
+}
+
+.password-box input{
+
+    padding-right:45px;
+
+}
+
+.password-box i{
+
+    position:absolute;
+
+    right:15px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    color:#888;
+
+    cursor:pointer;
+
+}
+
+/* ==========================================
+   OPTIONS
+========================================== */
+
+.options{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+    font-size:14px;
+
+}
+
+.options a{
+
+    color:#0056d6;
+
+    text-decoration:none;
+
+}
+
+.options a:hover{
+
+    text-decoration:underline;
+
+}
+
+/* ==========================================
+   BUTTON
+========================================== */
+
+button{
+
+    width:100%;
+
+    background:#0056d6;
+
+    color:white;
+
+    border:none;
+
+    padding:15px;
+
+    font-size:17px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#003d99;
+
+}
+
+/* ==========================================
+   REGISTER
+========================================== */
+
+.register-link{
+
+    text-align:center;
+
+    margin-top:25px;
+
+}
+
+.register-link a{
+
+    color:#0056d6;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+}
+
+.register-link a:hover{
+
+    text-decoration:underline;
+
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media(max-width:992px){
+
+.login-container{
+
+grid-template-columns:1fr;
+
+}
+
+.left-panel{
+
+display:none;
+
+}
+
+.right-panel{
+
+padding:30px;
+
+}
+
+}

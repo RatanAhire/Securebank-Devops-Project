@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Login | SecureBank</title>
+
+    <link rel="stylesheet"
+          href="CSS/login.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="login-container">
+
+    <!-- LEFT -->
+
+    <div class="left-panel">
+
+        <img src="images/login-bank.png"
+             alt="SecureBank">
+
+        <h1>Welcome Back!</h1>
+
+        <p>
+
+            Access your SecureBank account securely.
+
+            Transfer money, check balances, pay bills,
+
+            and manage your banking anytime.
+
+        </p>
+
+        <div class="features">
+
+            <div>
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                Secure Login
+
+            </div>
+
+            <div>
+
+                <i class="fa-solid fa-mobile-screen-button"></i>
+
+                Mobile Banking
+
+            </div>
+
+            <div>
+
+                <i class="fa-solid fa-money-bill-transfer"></i>
+
+                Instant Transfers
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- RIGHT -->
+
+    <div class="right-panel">
+
+        <div class="login-card">
+
+            <div class="logo">
+
+                <i class="fa-solid fa-building-columns"></i>
+
+                <span>SecureBank</span>
+
+            </div>
+
+            <h2>Customer Login</h2>
+
+            <p>
+
+                Sign in to continue.
+
+            </p>
+
+            <form id="loginForm">
+
+                <div class="form-group">
+
+                    <label>Email Address</label>
+
+                    <input type="email"
+                           placeholder="Enter Email"
+                           required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Password</label>
+
+                    <div class="password-box">
+
+                        <input type="password"
+                               id="password"
+                               placeholder="Enter Password"
+                               required>
+
+                        <i class="fa-solid fa-eye"
+                           id="togglePassword"></i>
+
+                    </div>
+
+                </div>
+
+                <div class="options">
+
+                    <label>
+
+                        <input type="checkbox">
+
+                        Remember Me
+
+                    </label>
+
+                    <a href="#">
+
+                        Forgot Password?
+
+                    </a>
+
+                </div>
+
+                <button type="submit">
+
+                    <i class="fa-solid fa-right-to-bracket"></i>
+
+                    Login
+
+                </button>
+
+                <div class="register-link">
+
+                    New Customer?
+
+                    <a href="register.html">
+
+                        Create Account
+
+                    </a>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="JS/login.js"></script>
+
+</body>
+
+</html>

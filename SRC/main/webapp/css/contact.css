@@ -1,0 +1,808 @@
+/* ===========================================
+        CONTACT PAGE
+=========================================== */
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:'Poppins',sans-serif;
+
+}
+
+body{
+
+    background:#f4f7fb;
+
+    color:#333;
+
+}
+
+.dashboard{
+
+    display:flex;
+
+    min-height:100vh;
+
+}
+
+.main-content{
+
+    flex:1;
+
+    margin-left:270px;
+
+    padding:30px;
+
+}
+
+a{
+
+    text-decoration:none;
+
+}
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
+}
+
+
+/* ===========================================
+        SUPPORT CARDS
+=========================================== */
+
+.support-section{
+
+    margin-top:25px;
+
+}
+
+.support-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+.support-card{
+
+    background:#ffffff;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    text-align:center;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.support-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.support-card i{
+
+    font-size:48px;
+
+    color:#0056d6;
+
+    margin-bottom:18px;
+
+}
+
+.support-card h3{
+
+    color:#003366;
+
+    margin-bottom:12px;
+
+}
+
+.support-card p{
+
+    color:#666;
+
+    line-height:1.8;
+
+}
+
+/* ===========================================
+        CONTACT FORM
+=========================================== */
+
+.contact-card{
+
+    margin-top:35px;
+
+    background:#ffffff;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.contact-card h2{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:#003366;
+
+    margin-bottom:30px;
+
+}
+
+.contact-card h2 i{
+
+    color:#0056d6;
+
+}
+
+.contact-form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+
+}
+
+.form-row{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:25px;
+
+}
+
+.form-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.form-group label{
+
+    font-weight:600;
+
+    color:#003366;
+
+    margin-bottom:10px;
+
+}
+
+.form-group input,
+.form-group textarea{
+
+    padding:15px;
+
+    border:1px solid #dcdcdc;
+
+    border-radius:12px;
+
+    outline:none;
+
+    resize:none;
+
+    transition:.3s;
+
+}
+
+.form-group input:focus,
+.form-group textarea:focus{
+
+    border-color:#0056d6;
+
+    box-shadow:0 0 10px rgba(0,86,214,.18);
+
+}
+
+.send-btn{
+
+    align-self:flex-start;
+
+    border:none;
+
+    background:#0056d6;
+
+    color:#ffffff;
+
+    padding:15px 30px;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.send-btn:hover{
+
+    background:#003366;
+
+}
+
+.send-btn i{
+
+    margin-right:8px;
+
+}
+
+/* ===========================================
+        EMERGENCY BANKING
+=========================================== */
+
+.emergency-section{
+
+    margin-top:40px;
+
+}
+
+.emergency-section h2{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:#003366;
+
+    margin-bottom:30px;
+
+}
+
+.emergency-section h2 i{
+
+    color:#dc2626;
+
+}
+
+.emergency-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+}
+
+.emergency-card{
+
+    background:#ffffff;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    text-align:center;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.emergency-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.emergency-card i{
+
+    font-size:50px;
+
+    color:#dc2626;
+
+    margin-bottom:18px;
+
+}
+
+.emergency-card h3{
+
+    color:#003366;
+
+    margin-bottom:15px;
+
+}
+
+.emergency-card p{
+
+    color:#666;
+
+    line-height:1.8;
+
+    margin-bottom:25px;
+
+}
+
+.danger-btn{
+
+    border:none;
+
+    background:#dc2626;
+
+    color:#ffffff;
+
+    padding:14px 28px;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.danger-btn:hover{
+
+    background:#b91c1c;
+
+}
+
+/* ===========================================
+        BRANCH INFORMATION
+=========================================== */
+
+.branch-section{
+
+    margin-top:40px;
+
+}
+
+.branch-section h2{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:#003366;
+
+    margin-bottom:25px;
+
+}
+
+.branch-section h2 i{
+
+    color:#0056d6;
+
+}
+
+.branch-card{
+
+    background:#ffffff;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.branch-details p{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-bottom:20px;
+
+    color:#555;
+
+    font-size:16px;
+
+}
+
+.branch-details i{
+
+    width:24px;
+
+    color:#0056d6;
+
+    font-size:18px;
+
+}
+
+
+/* ===========================================
+        ATM & BRANCH LOCATOR
+=========================================== */
+
+.locator-section{
+
+    margin-top:40px;
+
+}
+
+.locator-card{
+
+    background:linear-gradient(135deg,#003366,#0056d6);
+
+    color:#ffffff;
+
+    border-radius:20px;
+
+    padding:40px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+}
+
+.locator-content h2{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:18px;
+
+}
+
+.locator-content p{
+
+    color:#dbeafe;
+
+    line-height:1.8;
+
+    margin-bottom:25px;
+
+}
+
+.locator-btn{
+
+    border:none;
+
+    background:#ffffff;
+
+    color:#0056d6;
+
+    padding:14px 28px;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.locator-btn:hover{
+
+    background:#f4f7fb;
+
+}
+
+.locator-image i{
+
+    font-size:90px;
+
+    color:#ffffff;
+
+    opacity:.9;
+
+}
+
+/* ===========================================
+        CUSTOMER FEEDBACK
+=========================================== */
+
+.feedback-section{
+
+    margin-top:40px;
+
+}
+
+.feedback-section h2{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:#003366;
+
+    margin-bottom:25px;
+
+}
+
+.feedback-section h2 i{
+
+    color:#f59e0b;
+
+}
+
+.feedback-card{
+
+    background:#ffffff;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.feedback-card textarea{
+
+    width:100%;
+
+    padding:18px;
+
+    border:1px solid #dddddd;
+
+    border-radius:15px;
+
+    resize:none;
+
+    outline:none;
+
+    transition:.3s;
+
+    font-size:15px;
+
+}
+
+.feedback-card textarea:focus{
+
+    border-color:#0056d6;
+
+    box-shadow:0 0 10px rgba(0,86,214,.18);
+
+}
+
+.feedback-btn{
+
+    margin-top:20px;
+
+    border:none;
+
+    background:#f59e0b;
+
+    color:#ffffff;
+
+    padding:14px 30px;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.feedback-btn:hover{
+
+    background:#d97706;
+
+}
+
+/* ===========================================
+        FAQ
+=========================================== */
+
+.faq-section{
+
+    margin-top:40px;
+
+}
+
+.faq-section h2{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:#003366;
+
+    margin-bottom:25px;
+
+}
+
+.faq-section h2 i{
+
+    color:#0056d6;
+
+}
+
+.faq-container{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+.faq-item{
+
+    background:#ffffff;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.faq-item:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.faq-item h3{
+
+    color:#003366;
+
+    margin-bottom:15px;
+
+}
+
+.faq-item p{
+
+    color:#666;
+
+    line-height:1.8;
+
+}
+
+
+/* ===========================================
+        RESPONSIVE
+=========================================== */
+
+@media(max-width:1200px){
+
+.support-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.emergency-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.dashboard-footer{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:992px){
+
+.main-content{
+
+margin-left:90px;
+
+}
+
+.form-row{
+
+grid-template-columns:1fr;
+
+}
+
+.locator-card{
+
+flex-direction:column;
+
+text-align:center;
+
+gap:30px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.main-content{
+
+margin-left:0;
+
+padding:20px;
+
+}
+
+.support-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.contact-card,
+.branch-card,
+.feedback-card,
+.faq-item{
+
+padding:20px;
+
+}
+
+.footer-left,
+.footer-center,
+.footer-right{
+
+text-align:center;
+
+}
+
+.footer-left h3,
+.footer-right p{
+
+justify-content:center;
+
+}
+
+.send-btn,
+.feedback-btn,
+.locator-btn{
+
+width:100%;
+
+}
+
+}

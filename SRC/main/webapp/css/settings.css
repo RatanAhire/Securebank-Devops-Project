@@ -1,0 +1,631 @@
+/* ======================================================
+                    SETTINGS PAGE
+====================================================== */
+
+.settings-page{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:35px;
+
+}
+
+/* ======================================================
+                    PAGE TITLE
+====================================================== */
+
+.page-title{
+
+    margin-bottom:10px;
+
+}
+
+.page-title h2{
+
+    color:#003366;
+
+    font-size:32px;
+
+    font-weight:700;
+
+}
+
+.page-title p{
+
+    color:#777;
+
+    margin-top:8px;
+
+    font-size:15px;
+
+}
+
+/* ======================================================
+                SETTINGS OVERVIEW
+====================================================== */
+
+.settings-overview{
+
+    width:100%;
+
+}
+
+.overview-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+
+    gap:25px;
+
+}
+
+.overview-card{
+
+    background:#ffffff;
+
+    border-radius:18px;
+
+    padding:30px;
+
+    text-align:center;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:all .35s ease;
+
+}
+
+.overview-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+
+}
+
+.overview-card i{
+
+    font-size:48px;
+
+    color:#0056d6;
+
+    margin-bottom:18px;
+
+}
+
+.overview-card h3{
+
+    color:#003366;
+
+    margin-bottom:10px;
+
+}
+
+.overview-card p{
+
+    color:#777;
+
+    line-height:1.8;
+
+}
+
+/* ======================================================
+                    SETTINGS CARD
+====================================================== */
+
+.settings-card{
+
+    background:#ffffff;
+
+    border-radius:18px;
+
+    padding:35px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.settings-card h2{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:30px;
+
+    color:#003366;
+
+}
+
+.settings-card h2 i{
+
+    color:#0056d6;
+
+}
+
+/* ======================================================
+                    FORM
+====================================================== */
+
+.settings-form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+
+}
+
+.form-row{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:25px;
+
+}
+
+.form-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.form-group label{
+
+    margin-bottom:10px;
+
+    font-weight:600;
+
+    color:#003366;
+
+}
+
+.form-group input,
+.form-group select{
+
+    width:100%;
+
+    padding:15px;
+
+    border:1px solid #d8d8d8;
+
+    border-radius:12px;
+
+    outline:none;
+
+    font-size:15px;
+
+    transition:all .3s ease;
+
+}
+
+.form-group input:focus,
+.form-group select:focus{
+
+    border-color:#0056d6;
+
+    box-shadow:0 0 8px rgba(0,86,214,.2);
+
+}
+
+/* ======================================================
+                    SETTINGS LIST
+====================================================== */
+
+.settings-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+.setting-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:20px 0;
+
+    border-bottom:1px solid #eeeeee;
+
+}
+
+.setting-item:last-child{
+
+    border-bottom:none;
+
+}
+
+.setting-item h3{
+
+    color:#003366;
+
+    font-size:18px;
+
+    margin-bottom:8px;
+
+}
+
+.setting-item p{
+
+    color:#777;
+
+    font-size:14px;
+
+    line-height:1.7;
+
+}
+
+.setting-item span{
+
+    color:#003366;
+
+    font-weight:600;
+
+}
+
+/* ======================================================
+                    TOGGLE SWITCH
+====================================================== */
+
+.switch{
+
+    position:relative;
+
+    display:inline-block;
+
+    width:58px;
+
+    height:30px;
+
+}
+
+.switch input{
+
+    opacity:0;
+
+    width:0;
+
+    height:0;
+
+}
+
+.slider{
+
+    position:absolute;
+
+    inset:0;
+
+    cursor:pointer;
+
+    background:#d1d5db;
+
+    border-radius:30px;
+
+    transition:all .35s ease;
+
+}
+
+.slider::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:24px;
+
+    height:24px;
+
+    left:3px;
+
+    top:3px;
+
+    background:#ffffff;
+
+    border-radius:50%;
+
+    transition:all .35s ease;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.2);
+
+}
+
+.switch input:checked + .slider{
+
+    background:#0056d6;
+
+}
+
+.switch input:checked + .slider::before{
+
+    transform:translateX(28px);
+
+}
+
+/* ======================================================
+                    BUTTONS
+====================================================== */
+
+.setting-btn{
+
+    background:#0056d6;
+
+    color:#ffffff;
+
+    border:none;
+
+    min-width:140px;
+
+    height:46px;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:all .3s ease;
+
+}
+
+.setting-btn:hover{
+
+    background:#003366;
+
+    transform:translateY(-2px);
+
+}
+
+.remove-btn{
+
+    background:#dc2626;
+
+    color:#ffffff;
+
+    border:none;
+
+    min-width:120px;
+
+    height:44px;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    transition:all .3s ease;
+
+}
+
+.remove-btn:hover{
+
+    background:#b91c1c;
+
+}
+
+.save-section{
+
+    text-align:center;
+
+    margin-top:40px;
+
+}
+
+.save-btn{
+
+    background:#16a34a;
+
+    color:#ffffff;
+
+    border:none;
+
+    padding:18px 50px;
+
+    border-radius:40px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    box-shadow:0 12px 25px rgba(22,163,74,.25);
+
+    transition:all .3s ease;
+
+}
+
+.save-btn:hover{
+
+    background:#15803d;
+
+    transform:translateY(-3px);
+
+}
+
+.save-btn i{
+
+    margin-right:10px;
+
+}
+
+/* ======================================================
+                    CONNECTED DEVICES
+====================================================== */
+
+.device-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+.device-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:20px;
+
+    padding:25px;
+
+    background:#f8fbff;
+
+    border:1px solid #e5e7eb;
+
+    border-radius:15px;
+
+    transition:all .3s ease;
+
+}
+
+.device-item:hover{
+
+    background:#eef5ff;
+
+    border-color:#0056d6;
+
+}
+
+.device-item h3{
+
+    color:#003366;
+
+    margin-bottom:8px;
+
+}
+
+.device-item p{
+
+    color:#777;
+
+}
+
+
+/* ======================================================
+                    RESPONSIVE
+====================================================== */
+
+@media (max-width:1200px){
+
+    .overview-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .dashboard-footer{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media (max-width:992px){
+
+    .main-content{
+
+        margin-left:90px;
+
+    }
+
+    .form-row{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .setting-item{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:15px;
+
+    }
+
+    .device-item{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .main-content{
+
+        margin-left:0;
+
+        padding:20px;
+
+    }
+
+    .overview-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .settings-card{
+
+        padding:25px;
+
+    }
+
+    .dashboard-footer{
+
+        padding:30px;
+
+    }
+
+    .footer-left,
+    .footer-center,
+    .footer-right{
+
+        text-align:center;
+
+    }
+
+    .footer-left h3,
+    .footer-right p{
+
+        justify-content:center;
+
+    }
+
+    .save-btn{
+
+        width:100%;
+
+    }
+
+}

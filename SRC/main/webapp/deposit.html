@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Deposit Money | SecureBank</title>
+
+    <link rel="stylesheet" href="CSS/dashboard.css">
+
+    <link rel="stylesheet" href="CSS/deposit.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- ===========================
+        SIDEBAR
+=========================== -->
+
+        <aside class="sidebar">
+
+            <div class="logo">
+
+                <i class="fa-solid fa-building-columns"></i>
+
+                <h2>SecureBank</h2>
+
+            </div>
+
+            <ul>
+
+                <li>
+
+                    <a href="dashboard.html">
+
+                        <i class="fa-solid fa-house"></i>
+
+                        Dashboard
+
+                    </a>
+
+                </li>
+
+                <li class="active">
+
+                    <a href="deposit.html">
+
+                        <i class="fa-solid fa-money-bill-wave"></i>
+
+                        Deposit
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="withdraw.html">
+
+                        <i class="fa-solid fa-wallet"></i>
+
+                        Withdraw
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="transfer.html">
+
+                        <i class="fa-solid fa-arrow-right-arrow-left"></i>
+
+                        Transfer
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="transaction.html">
+
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+
+                        Transactions
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="profile.html">
+
+                        <i class="fa-solid fa-user"></i>
+
+                        Profile
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="settings.html">
+
+                        <i class="fa-solid fa-gear"></i>
+
+                        Settings
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="contact.html">
+
+                        <i class="fa-solid fa-headset"></i>
+
+                        Contact Us
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+            <div class="logout">
+
+                <a href="login.html">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    Logout
+
+                </a>
+
+            </div>
+
+        </aside>
+
+        <!-- ===========================
+        MAIN CONTENT
+=========================== -->
+
+        <main class="main-content">
+
+            <!-- Top Navbar -->
+
+            <header class="top-navbar">
+
+                <div class="welcome">
+
+                    <h2>Deposit Money</h2>
+
+                    <p>Securely add money to your SecureBank account.</p>
+
+                </div>
+
+                <div class="top-right">
+
+                    <!-- Search -->
+
+                    <div class="search-box">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input type="text" placeholder="Search transactions...">
+
+                    </div>
+
+                    <!-- Notifications -->
+
+                    <div class="icon-box">
+
+                        <i class="fa-regular fa-bell"></i>
+
+                        <span class="badge">3</span>
+
+                    </div>
+
+                    <!-- Messages -->
+
+                    <div class="icon-box">
+
+                        <i class="fa-regular fa-envelope"></i>
+
+                        <span class="badge">5</span>
+
+                    </div>
+
+                    <!-- Customer -->
+
+                    <div class="user-profile">
+
+                        <img src="images/customer1.jpg" alt="Customer">
+
+                        <div>
+
+                            <h4>Ratan Ahire</h4>
+
+                            <small>Premium Customer</small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+            <!-- ==========================================
+            DEPOSIT CONTENT
+========================================== -->
+
+            <section class="deposit-section">
+
+                <!-- Left Side -->
+
+                <div class="deposit-card">
+
+                    <div class="card-header">
+
+                        <h2>
+
+                            <i class="fa-solid fa-money-bill-wave"></i>
+
+                            Deposit Money
+
+                        </h2>
+
+                        <p>
+
+                            Add funds securely to your SecureBank account.
+
+                        </p>
+
+                    </div>
+
+                    <form class="deposit-form">
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+
+                                <label>Account Number</label>
+
+                                <input type="text" placeholder="Enter Account Number">
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <label>Account Holder</label>
+
+                                <input type="text" placeholder="Account Holder Name">
+
+                            </div>
+
+                        </div>
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+
+                                <label>Deposit Amount</label>
+
+                                <input type="number" placeholder="₹ Enter Amount">
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <label>Payment Method</label>
+
+                                <select>
+
+                                    <option>Cash</option>
+
+                                    <option>Cheque</option>
+
+                                    <option>UPI</option>
+
+                                    <option>Net Banking</option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label>Remarks</label>
+
+                            <textarea rows="4" placeholder="Optional Remarks"></textarea>
+
+                            <small id="remarksCount">
+
+                                0 / 150 Characters
+
+                            </small>
+
+                        </div>
+
+                        <button type="submit" class="deposit-btn">
+
+                            <i class="fa-solid fa-circle-plus"></i>
+
+                            Deposit Money
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+                <!-- Right Side -->
+
+                <div class="summary-card">
+
+                    <h2>
+
+                        <i class="fa-solid fa-wallet"></i>
+
+                        Deposit Summary
+
+                    </h2>
+
+                    <div class="summary-item">
+
+                        <span>Current Balance</span>
+
+                        <strong>₹2,48,560</strong>
+
+                    </div>
+
+                    <div class="summary-item">
+
+                        <span>Today's Deposit</span>
+
+                        <strong>₹25,000</strong>
+
+                    </div>
+
+                    <div class="summary-item">
+
+                        <span>Monthly Deposit</span>
+
+                        <strong>₹1,45,000</strong>
+
+                    </div>
+
+                    <div class="summary-item">
+
+                        <span>Last Deposit</span>
+
+                        <strong>₹15,000</strong>
+
+                    </div>
+
+                    <div class="summary-item">
+
+                        <span>Status</span>
+
+                        <strong class="success">
+
+                            Ready to Deposit
+
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ==========================================
+            RECENT DEPOSITS
+========================================== -->
+
+            <section class="recent-deposits">
+
+                <div class="section-header">
+
+                    <h2>
+
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+
+                        Recent Deposits
+
+                    </h2>
+
+                    <a href="transaction.html" class="view-all">
+
+                        View All
+
+                    </a>
+
+                </div>
+
+                <table class="deposit-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Date</th>
+
+                            <th>Reference No.</th>
+
+                            <th>Payment Mode</th>
+
+                            <th>Amount</th>
+
+                            <th>Status</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>20 Jul 2026</td>
+
+                            <td>DEP102548</td>
+
+                            <td>UPI</td>
+
+                            <td>₹15,000</td>
+
+                            <td>
+
+                                <span class="success-badge">
+
+                                    Successful
+
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>18 Jul 2026</td>
+
+                            <td>DEP102401</td>
+
+                            <td>Cash</td>
+
+                            <td>₹8,000</td>
+
+                            <td>
+
+                                <span class="success-badge">
+
+                                    Successful
+
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>16 Jul 2026</td>
+
+                            <td>DEP102233</td>
+
+                            <td>Net Banking</td>
+
+                            <td>₹25,000</td>
+
+                            <td>
+
+                                <span class="success-badge">
+
+                                    Successful
+
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>14 Jul 2026</td>
+
+                            <td>DEP102187</td>
+
+                            <td>Cheque</td>
+
+                            <td>₹50,000</td>
+
+                            <td>
+
+                                <span class="pending-badge">
+
+                                    Processing
+
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>11 Jul 2026</td>
+
+                            <td>DEP102054</td>
+
+                            <td>Cash</td>
+
+                            <td>₹5,500</td>
+
+                            <td>
+
+                                <span class="success-badge">
+
+                                    Successful
+
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </section>
+
+            <!-- ==========================================
+            DEPOSIT TIPS
+========================================== -->
+
+            <section class="deposit-tips">
+
+                <h2>
+
+                    <i class="fa-solid fa-lightbulb"></i>
+
+                    Deposit Tips
+
+                </h2>
+
+                <div class="tips-grid">
+
+                    <div class="tip-card">
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                        <h3>Secure Transactions</h3>
+
+                        <p>
+
+                            Always verify the account number before making a deposit.
+
+                        </p>
+
+                    </div>
+
+                    <div class="tip-card">
+
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+
+                        <h3>Use UPI</h3>
+
+                        <p>
+
+                            UPI deposits are instant and available 24×7.
+
+                        </p>
+
+                    </div>
+
+                    <div class="tip-card">
+
+                        <i class="fa-solid fa-receipt"></i>
+
+                        <h3>Keep Receipts</h3>
+
+                        <p>
+
+                            Save your deposit receipt until the amount reflects in your account.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ==========================================
+            FREQUENTLY ASKED QUESTIONS
+========================================== -->
+
+            <section class="faq-section">
+
+                <h2>
+
+                    <i class="fa-solid fa-circle-question"></i>
+
+                    Frequently Asked Questions
+
+                </h2>
+
+                <div class="faq-container">
+
+                    <div class="faq-card">
+
+                        <h3>
+
+                            <i class="fa-solid fa-plus"></i>
+
+                            How long does a deposit take?
+
+                        </h3>
+
+                        <p>
+
+                            Cash, UPI and Net Banking deposits are usually credited instantly.
+                            Cheque deposits may take 1–2 working days.
+
+                        </p>
+
+                    </div>
+
+                    <div class="faq-card">
+
+                        <h3>
+
+                            <i class="fa-solid fa-plus"></i>
+
+                            Is there any deposit limit?
+
+                        </h3>
+
+                        <p>
+
+                            Limits depend on your account type and payment method.
+                            Please refer to SecureBank's deposit policy.
+
+                        </p>
+
+                    </div>
+
+                    <div class="faq-card">
+
+                        <h3>
+
+                            <i class="fa-solid fa-plus"></i>
+
+                            Can I cancel a deposit?
+
+                        </h3>
+
+                        <p>
+
+                            Once a successful deposit is processed, it cannot be cancelled.
+                            Contact customer support for assistance.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ==========================================
+                FOOTER
+========================================== -->
+
+            <footer class="dashboard-footer">
+
+                <div class="footer-left">
+
+                    <h3>
+
+                        <i class="fa-solid fa-building-columns"></i>
+
+                        SecureBank
+
+                    </h3>
+
+                    <p>
+
+                        Your trusted banking partner providing secure, fast and
+                        reliable digital banking services anytime, anywhere.
+
+                    </p>
+
+                </div>
+
+                <div class="footer-center">
+
+                    <h4>Quick Links</h4>
+
+                    <ul>
+
+                        <li><a href="dashboard.html">Dashboard</a></li>
+
+                        <li><a href="transaction.html">Transactions</a></li>
+
+                        <li><a href="profile.html">Profile</a></li>
+
+                        <li><a href="support.html">Support</a></li>
+
+                    </ul>
+
+                </div>
+
+                <div class="footer-right">
+
+                    <h4>Contact Us</h4>
+
+                    <p>
+
+                        <i class="fa-solid fa-phone"></i>
+
+                        +91 98765 43210
+
+                    </p>
+
+                    <p>
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                        support@securebank.com
+
+                    </p>
+
+                    <p>
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                        Mumbai, Maharashtra
+
+                    </p>
+
+                </div>
+
+            </footer>
+
+            <div class="copyright">
+
+                © 2026 SecureBank. All Rights Reserved.
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="JS/deposit.js"></script>
+
+</body>
+
+</html>

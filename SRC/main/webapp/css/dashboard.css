@@ -1,0 +1,1382 @@
+/* ======================================================
+   SECUREBANK DASHBOARD CSS
+====================================================== */
+
+/* ===========================
+   GOOGLE FONT RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    background:#f5f7fb;
+
+    color:#333;
+
+}
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+img{
+
+    display:block;
+
+    max-width:100%;
+
+}
+
+/* ===========================
+   MAIN LAYOUT
+=========================== */
+
+.dashboard{
+
+    display:flex;
+
+    min-height:100vh;
+
+}
+
+.main-content{
+
+    flex:1;
+
+    margin-left:270px;
+
+    padding:30px;
+
+}
+
+/* ===========================
+   SIDEBAR
+=========================== */
+
+.sidebar{
+
+    width:270px;
+
+    background:linear-gradient(180deg,#003366,#0056d6);
+
+    color:#fff;
+
+    position:fixed;
+
+    left:0;
+
+    top:0;
+
+    bottom:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.logo{
+
+    text-align:center;
+
+    padding:30px 20px;
+
+    border-bottom:1px solid rgba(255,255,255,.15);
+
+}
+
+.logo i{
+
+    font-size:42px;
+
+    margin-bottom:10px;
+
+}
+
+.logo h2{
+
+    font-size:28px;
+
+    font-weight:600;
+
+}
+
+.sidebar ul{
+
+    list-style:none;
+
+    margin-top:25px;
+
+    flex:1;
+
+}
+
+.sidebar ul li{
+
+    margin:8px 15px;
+
+}
+
+.sidebar ul li a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    transition:.3s;
+
+}
+
+.sidebar ul li a:hover{
+
+    background:rgba(255,255,255,.18);
+
+}
+
+.sidebar ul li.active a{
+
+    background:#ffffff;
+
+    color:#0056d6;
+
+    font-weight:600;
+
+}
+
+.sidebar i{
+
+    width:22px;
+
+    text-align:center;
+
+}
+
+.logout{
+
+    padding:20px;
+
+}
+
+.logout a{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+    background:#ffffff;
+
+    color:#0056d6;
+
+    padding:14px;
+
+    border-radius:12px;
+
+    font-weight:600;
+
+}
+
+.logout a:hover{
+
+    background:#e8f2ff;
+
+}
+
+/* ===========================
+   TOP NAVBAR
+=========================== */
+
+.top-navbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:35px;
+
+}
+
+.welcome h2{
+
+    color:#003366;
+
+    font-size:30px;
+
+    margin-bottom:8px;
+
+}
+
+.welcome span{
+
+    color:#0056d6;
+
+}
+
+.welcome p{
+
+    color:#666;
+
+}
+
+.top-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+/* ===========================
+   SEARCH BOX
+=========================== */
+
+.search-box{
+
+    width:340px;
+
+    background:#fff;
+
+    border-radius:50px;
+
+    display:flex;
+
+    align-items:center;
+
+    padding:12px 20px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+}
+
+.search-box i{
+
+    color:#777;
+
+    margin-right:12px;
+
+}
+
+.search-box input{
+
+    border:none;
+
+    outline:none;
+
+    width:100%;
+
+    font-size:15px;
+
+    background:transparent;
+
+}
+
+/* ===========================
+   ICONS
+=========================== */
+
+.icon-box{
+
+    position:relative;
+
+    width:50px;
+
+    height:50px;
+
+    background:#fff;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.icon-box:hover{
+
+    background:#0056d6;
+
+    color:#fff;
+
+    transform:translateY(-3px);
+
+}
+
+.badge{
+
+    position:absolute;
+
+    top:-4px;
+
+    right:-4px;
+
+    width:20px;
+
+    height:20px;
+
+    background:red;
+
+    color:#fff;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:11px;
+
+    font-weight:600;
+
+}
+
+/* ===========================
+   USER PROFILE
+=========================== */
+
+.user-profile{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    background:#fff;
+
+    padding:8px 15px;
+
+    border-radius:50px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+}
+
+.user-profile img{
+
+    width:52px;
+
+    height:52px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:3px solid #0056d6;
+
+}
+
+.user-profile h4{
+
+    color:#003366;
+
+    font-size:16px;
+
+}
+
+.user-profile small{
+
+    color:#777;
+
+}
+
+
+/* ======================================================
+   HERO SECTION
+====================================================== */
+
+.hero-banner{
+
+    background:linear-gradient(135deg,#0056d6,#003366);
+
+    border-radius:20px;
+
+    padding:40px;
+
+    color:#fff;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:35px;
+
+    overflow:hidden;
+
+}
+
+.hero-left{
+
+    width:55%;
+
+}
+
+.hero-left h1{
+
+    font-size:40px;
+
+    margin-bottom:20px;
+
+}
+
+.hero-left p{
+
+    font-size:16px;
+
+    line-height:1.8;
+
+    margin-bottom:30px;
+
+    color:#eef4ff;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:20px;
+
+}
+
+.btn-primary{
+
+    background:#ffffff;
+
+    color:#0056d6;
+
+    padding:14px 30px;
+
+    border-radius:30px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.btn-primary:hover{
+
+    background:#f1f5ff;
+
+    transform:translateY(-4px);
+
+}
+
+.btn-secondary{
+
+    border:2px solid #ffffff;
+
+    color:#ffffff;
+
+    padding:14px 30px;
+
+    border-radius:30px;
+
+    transition:.3s;
+
+}
+
+.btn-secondary:hover{
+
+    background:#ffffff;
+
+    color:#0056d6;
+
+}
+
+.hero-right{
+
+    width:40%;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.hero-right img{
+
+    width:320px;
+
+}
+
+/* ======================================================
+   BALANCE CARDS
+====================================================== */
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+    margin-bottom:40px;
+
+}
+
+.card{
+
+    background:#ffffff;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+    position:relative;
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 18px 35px rgba(0,0,0,.15);
+
+}
+
+.card img{
+
+    width:65px;
+
+    height:65px;
+
+    margin-bottom:20px;
+
+}
+
+.card h5{
+
+    color:#777;
+
+    font-size:15px;
+
+    margin-bottom:10px;
+
+}
+
+.card h2{
+
+    color:#003366;
+
+    font-size:30px;
+
+    margin-bottom:12px;
+
+}
+
+.positive{
+
+    color:#16a34a;
+
+    font-weight:600;
+
+}
+
+.negative{
+
+    color:#dc2626;
+
+    font-weight:600;
+
+}
+
+.gold{
+
+    color:#d97706;
+
+    font-weight:600;
+
+}
+
+/* ======================================================
+   QUICK ACTIONS
+====================================================== */
+
+.quick-actions{
+    margin-bottom: 45px;
+}
+
+.quick-actions h2{
+    color: #003366;
+    margin-bottom: 25px;
+}
+
+.action-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.action-card{
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,.08);
+    transition: .3s;
+}
+
+.action-card:hover{
+    background: #0056d6;
+    color: #ffffff;
+    transform: translateY(-8px);
+}
+
+/* FIX: This keeps the original proportions of your icon files */
+.action-card img{
+    width: 70px;
+    height: 70px;
+    object-fit: contain; /* Prevents icons from squishing */
+    display: block;      /* Centers image horizontally */
+    margin: 0 auto 15px;
+}
+
+.action-card h4{
+    margin-bottom: 10px;
+    transition: color 0.3s ease; /* Smooth color swap on hover */
+}
+
+/* FIX: Turns header white on hover so it stays readable */
+.action-card:hover h4{
+    color: #ffffff;
+}
+
+.action-card p{
+    font-size: 14px;
+    color: #777;
+    transition: color 0.3s ease; /* Smooth color swap on hover */
+}
+
+.action-card:hover p{
+    color: #ffffff;
+}
+
+
+/* ======================================================
+   RECENT TRANSACTIONS
+====================================================== */
+
+.transactions-section{
+
+    margin-bottom:40px;
+
+}
+
+.section-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+}
+
+.section-header h2{
+
+    color:#003366;
+
+    font-size:28px;
+
+}
+
+.view-all{
+
+    color:#0056d6;
+
+    font-weight:600;
+
+}
+
+.view-all:hover{
+
+    text-decoration:underline;
+
+}
+
+.table-container{
+
+    background:#ffffff;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    overflow-x:auto;
+
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+thead{
+
+    background:#0056d6;
+
+}
+
+thead th{
+
+    color:#ffffff;
+
+    padding:16px;
+
+    text-align:left;
+
+    font-weight:600;
+
+}
+
+tbody td{
+
+    padding:18px 16px;
+
+    border-bottom:1px solid #ececec;
+
+}
+
+tbody tr:hover{
+
+    background:#f5f9ff;
+
+}
+
+.credit{
+
+    color:#16a34a;
+
+    font-weight:600;
+
+}
+
+.debit{
+
+    color:#dc2626;
+
+    font-weight:600;
+
+}
+
+/* ===========================
+   STATUS BADGES
+=========================== */
+
+.status{
+
+    padding:7px 14px;
+
+    border-radius:30px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+.completed{
+
+    background:#d1fae5;
+
+    color:#047857;
+
+}
+
+.pending{
+
+    background:#fef3c7;
+
+    color:#b45309;
+
+}
+
+.failed{
+
+    background:#fee2e2;
+
+    color:#dc2626;
+
+}
+
+/* ======================================================
+   BANKING SERVICES
+====================================================== */
+
+.services-section{
+
+    margin-bottom:40px;
+
+}
+
+.services-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+}
+
+.service-card{
+
+    background:#ffffff;
+
+    padding:30px;
+
+    border-radius:18px;
+
+    text-align:center;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.service-card:hover{
+
+    background:#0056d6;
+
+    color:#ffffff;
+
+    transform:translateY(-8px);
+
+}
+
+.service-card i{
+
+    font-size:40px;
+
+    margin-bottom:20px;
+
+    color:#0056d6;
+
+}
+
+.service-card:hover i{
+
+    color:#ffffff;
+
+}
+
+.service-card h4{
+
+    margin-bottom:15px;
+
+    font-size:20px;
+
+}
+
+.service-card p{
+
+    color:#777;
+
+    line-height:1.7;
+
+}
+
+.service-card:hover p{
+
+    color:#ffffff;
+
+}
+
+/* ======================================================
+   LATEST OFFERS
+====================================================== */
+
+.offers-section{
+
+    margin-bottom:40px;
+
+}
+
+.offers-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+}
+
+.offer-card{
+
+    background:linear-gradient(135deg,#003366,#0056d6);
+
+    color:#ffffff;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    transition:.3s;
+
+}
+
+.offer-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.20);
+
+}
+
+.offer-card i{
+
+    font-size:45px;
+
+    margin-bottom:20px;
+
+}
+
+.offer-card h3{
+
+    margin-bottom:15px;
+
+}
+
+.offer-card p{
+
+    line-height:1.8;
+
+}
+
+/* ======================================================
+                    FOOTER
+====================================================== */
+
+.dashboard-footer{
+
+    margin-top:50px;
+
+    background:#003366;
+
+    color:#ffffff;
+
+    border-radius:20px;
+
+    padding:40px;
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr 1fr;
+
+    gap:40px;
+
+}
+
+.footer-left h3{
+
+    font-size:28px;
+
+    margin-bottom:20px;
+
+}
+
+.footer-left p{
+
+    line-height:1.8;
+
+    color:#dbeafe;
+
+}
+
+.footer-center h4,
+.footer-right h4{
+
+    margin-bottom:20px;
+
+}
+
+.footer-center ul{
+
+    list-style:none;
+
+}
+
+.footer-center ul li{
+
+    margin-bottom:12px;
+
+}
+
+.footer-center ul li a{
+
+    color:#dbeafe;
+
+    transition:.3s;
+
+}
+
+.footer-center ul li a:hover{
+
+    color:#ffffff;
+
+    padding-left:8px;
+
+}
+
+.footer-right p{
+
+    margin-bottom:15px;
+
+    color:#dbeafe;
+
+}
+
+.footer-right i{
+
+    margin-right:10px;
+
+}
+
+.copyright{
+
+    margin-top:20px;
+
+    text-align:center;
+
+    color:#777;
+
+    font-size:15px;
+
+}
+
+
+/* ======================================================
+                SCROLLBAR
+====================================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#0056d6;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#f1f5f9;
+
+}
+
+
+/* ======================================================
+                ANIMATION
+====================================================== */
+
+.card,
+.action-card,
+.service-card,
+.offer-card{
+
+    animation:fadeUp .6s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* ======================================================
+                RESPONSIVE
+====================================================== */
+
+@media(max-width:1200px){
+
+.cards{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.action-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.services-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.offers-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.hero-banner{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+.hero-left,
+.hero-right{
+
+width:100%;
+
+}
+
+.hero-right img{
+
+margin-top:30px;
+
+width:280px;
+
+}
+
+}
+
+
+@media(max-width:992px){
+
+.sidebar{
+
+width:90px;
+
+}
+
+.logo h2{
+
+display:none;
+
+}
+
+.sidebar ul li span{
+
+display:none;
+
+}
+
+.sidebar ul li a{
+
+justify-content:center;
+
+}
+
+.logout a{
+
+font-size:0;
+
+}
+
+.logout a i{
+
+font-size:20px;
+
+margin:0;
+
+}
+
+.main-content{
+
+margin-left:90px;
+
+}
+
+.top-navbar{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:20px;
+
+}
+
+.search-box{
+
+width:100%;
+
+}
+
+.user-profile{
+
+width:100%;
+
+}
+
+}
+
+
+@media(max-width:768px){
+
+.cards{
+
+grid-template-columns:1fr;
+
+}
+
+.action-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.services-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.offers-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.dashboard-footer{
+
+grid-template-columns:1fr;
+
+text-align:center;
+
+}
+
+.hero-buttons{
+
+flex-direction:column;
+
+}
+
+.section-header{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:10px;
+
+}
+
+table{
+
+font-size:14px;
+
+}
+
+}
+
+
+@media(max-width:576px){
+
+.main-content{
+
+padding:20px;
+
+}
+
+.hero-left h1{
+
+font-size:30px;
+
+}
+
+.hero-left p{
+
+font-size:14px;
+
+}
+
+.card h2{
+
+font-size:24px;
+
+}
+
+.search-box{
+
+padding:10px 15px;
+
+}
+
+.top-right{
+
+flex-wrap:wrap;
+
+}
+
+}

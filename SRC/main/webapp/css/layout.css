@@ -1,0 +1,414 @@
+/* ==========================================
+   RESET
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #f4f7fb;
+    color: #333;
+}
+
+/* ==========================================
+   SIDEBAR
+========================================== */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    background: #003366;
+    color: #fff;
+    overflow-y: auto;
+}
+
+.sidebar-logo {
+    padding: 25px 20px;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,.15);
+}
+
+.sidebar-logo i {
+    margin-right: 8px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 20px 0;
+}
+
+.sidebar ul li {
+    margin: 5px 0;
+}
+
+.sidebar ul li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+    text-decoration: none;
+    padding: 14px 25px;
+    transition: .3s;
+    font-size: 15px;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li.active a {
+    background: #0056d6;
+}
+
+.sidebar ul li a i {
+    width: 20px;
+    text-align: center;
+}
+
+/* ==========================================
+   MAIN AREA
+========================================== */
+
+.main-container {
+    margin-left: 250px;
+    min-height: 100vh;
+}
+
+/* ==========================================
+   TOP NAVBAR
+========================================== */
+
+.top-navbar {
+    height: 70px;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 35px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.08);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.page-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #003366;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.navbar-right i {
+    font-size: 20px;
+    cursor: pointer;
+    color: #003366;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-profile img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-profile span {
+    font-weight: 600;
+}
+
+/* ==========================================
+   PAGE CONTENT
+========================================== */
+
+.page-content {
+    padding: 30px;
+}
+
+/* ==========================================
+   COMMON CARD
+========================================== */
+
+.card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.08);
+    padding: 25px;
+}
+
+/* ==========================================
+   BUTTON
+========================================== */
+
+.btn-primary {
+    background: #0056d6;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn-primary:hover {
+    background: #003366;
+}
+
+/* ==========================================
+   FORM
+========================================== */
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d8d8d8;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.form-control:focus {
+    border-color: #0056d6;
+    outline: none;
+}
+
+/* ==========================================
+   TABLE
+========================================== */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th {
+    background: #0056d6;
+    color: white;
+    padding: 15px;
+    text-align: left;
+}
+
+table td {
+    padding: 15px;
+    border-bottom: 1px solid #e4e4e4;
+}
+
+.credit {
+    color: green;
+    font-weight: 600;
+}
+
+.debit {
+    color: red;
+    font-weight: 600;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width:991px){
+
+.sidebar{
+    width:220px;
+}
+
+.main-container{
+    margin-left:220px;
+}
+
+}
+
+@media (max-width:768px){
+
+.sidebar{
+    width:100%;
+    height:auto;
+    position:relative;
+}
+
+.main-container{
+    margin-left:0;
+}
+
+.top-navbar{
+    flex-direction:column;
+    height:auto;
+    padding:15px;
+    gap:15px;
+}
+
+}
+
+
+
+
+
+/* ==========================================================================
+   1. STRUCTURE WORKSPACE LAYOUT
+   ========================================================================== */
+/* Form container box card background styling */
+.page-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 35px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    margin-top: 10px;
+}
+
+.page-card h1 {
+    font-size: 26px;
+    color: #1e293b;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.page-card > p {
+    color: #64748b;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+/* ==========================================================================
+   2. TWO-COLUMN SPLIT CONTACT GRID
+   ========================================================================== */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 40px;
+    align-items: start;
+}
+
+/* ==========================================================================
+   3. LEFT SIDE: CONTACT INFO BOX
+   ========================================================================== */
+.contact-info {
+    background-color: #f8fafc;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+}
+
+.contact-info h2 {
+    font-size: 18px;
+    color: #033c73;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.contact-info p {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 15px;
+    color: #334155;
+    margin-bottom: 18px;
+    line-height: 1.5;
+}
+
+/* Specific styling for column support font icons */
+.contact-info p i {
+    font-size: 16px;
+    color: #0d6efd;
+    width: 20px;
+    text-align: center;
+}
+
+.contact-info p:last-child {
+    margin-bottom: 0;
+}
+
+/* ==========================================================================
+   4. RIGHT SIDE: SUPPORT INTAKE FORM
+   ========================================================================== */
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #333333;
+    outline: none;
+    background-color: #ffffff;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Interactive focus states */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.1);
+}
+
+.contact-form textarea {
+    resize: vertical;
+    font-family: inherit;
+}
+
+/* Submit Action Button Control */
+.btn-primary {
+    background-color: #0d6efd;
+    color: #ffffff;
+    border: none;
+    padding: 14px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.15s ease-in-out;
+    align-self: flex-start; /* Keeps button sizes natural instead of stretching */
+    min-width: 150px;
+}
+
+.btn-primary:hover {
+    background-color: #0b5ed7;
+}
+
+/* ==========================================================================
+   5. RESPONSIVE MEDIA BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr; /* Stacks column boxes cleanly for mobile viewports */
+        gap: 30px;
+    }
+    
+    .page-card {
+        padding: 20px;
+    }
+
+    .btn-primary {
+        width: 100%; /* Stretches the button to fit narrow screen widths */
+    }
+}

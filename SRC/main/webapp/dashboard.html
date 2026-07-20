@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | SecureBank</title>
+    
+    <link rel="stylesheet"
+          href="CSS/dashboard.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- =====================================
+                SIDEBAR
+    ====================================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <i class="fa-solid fa-building-columns"></i>
+
+            <h2>SecureBank</h2>
+
+        </div>
+
+        <ul>
+
+            <li class="active">
+
+                <a href="dashboard.html">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    <span>Dashboard</span>
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="deposit.html">
+
+                    <i class="fa-solid fa-wallet"></i>
+
+                    <span>Deposit</span>
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="withdraw.html">
+
+                    <i class="fa-solid fa-money-bill-wave"></i>
+
+                    <span>Withdraw</span>
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="transfer.html">
+
+                    <i class="fa-solid fa-right-left"></i>
+
+                    <span>Transfer</span>
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="transaction.html">
+
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+
+                    <span>Transactions</span>
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="profile.html">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <span>Profile</span>
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="settings.html">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                    <span>Settings</span>
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="contact.html">
+
+                    <i class="fa-solid fa-headset"></i>
+
+                    Contact Us
+
+                </a>
+
+            </li>
+
+        </ul>
+
+        <div class="logout">
+
+            <a href="index.html">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Logout
+
+            </a>
+
+        </div>
+
+    </aside>
+
+    <!-- =====================================
+                MAIN CONTENT
+    ====================================== -->
+
+    <main class="main-content">
+
+        <!-- ================= TOP NAVBAR ================= -->
+
+        <header class="top-navbar">
+
+            <div class="welcome">
+
+                <h2>
+
+                    Welcome Back,
+
+                    <span>Ratan 👋</span>
+
+                </h2>
+
+                <p>
+
+                    Manage all your banking services securely.
+
+                </p>
+
+            </div>
+
+            <div class="top-right">
+
+                <!-- Search -->
+
+                <div class="search-box">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input type="text"
+                           placeholder="Search transactions...">
+
+                </div>
+
+                <!-- Notification -->
+
+                <div class="icon-box">
+
+                    <i class="fa-solid fa-bell"></i>
+
+                    <span class="badge">
+
+                        3
+
+                    </span>
+
+                </div>
+
+                <!-- Messages -->
+
+                <div class="icon-box">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <span class="badge">
+
+                        2
+
+                    </span>
+
+                </div>
+
+                <!-- Customer -->
+
+                    <div href="profile.html" class="btn-primary user-profile">
+
+                        <img src="images/customer1.jpg"
+                            alt="Customer">
+
+                        <div>
+
+                            <h4>Ratan Ahire</h4>
+
+                            <small>
+
+                                Current Account
+
+                            </small>
+
+                        </div>
+
+                    </div>
+
+            </div>
+
+        </header>
+
+        <!-- =====================================
+                  DASHBOARD CONTENT START
+        ====================================== -->
+
+        <div class="dashboard-content">
+
+            <!-- =====================================
+            HERO SECTION
+===================================== -->
+
+<section class="hero-banner">
+
+    <div class="hero-left">
+
+        <h1>Smart Banking Made Simple</h1>
+
+        <p>
+
+            Access your account, transfer funds, pay bills,
+            track transactions and manage your finances
+            anytime, anywhere with SecureBank.
+
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="transfer.html" class="btn-primary">
+
+                Transfer Money
+
+            </a>
+
+            <a href="transaction.html" class="btn-secondary">
+
+                View Statement
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="hero-right">
+
+        <img src="images/banking-banner.png"
+             alt="Banking">
+
+    </div>
+
+</section>
+
+<!-- =====================================
+            BALANCE CARDS
+===================================== -->
+
+<section class="cards">
+
+    <div class="card">
+
+        <img src="images/wallet.png">
+
+        <h5>Available Balance</h5>
+
+        <h2>₹2,48,560</h2>
+
+        <span class="positive">
+
+            +12% This Month
+
+        </span>
+
+    </div>
+
+    <div class="card">
+
+        <img src="images/deposit.png">
+
+        <h5>Total Deposit</h5>
+
+        <h2>₹1,25,000</h2>
+
+        <span class="positive">
+
+            +8% Increase
+
+        </span>
+
+    </div>
+
+    <div class="card">
+
+        <img src="images/withdraw.png">
+
+        <h5>Total Withdrawal</h5>
+
+        <h2>₹58,400</h2>
+
+        <span class="negative">
+
+            -4% This Month
+
+        </span>
+
+    </div>
+
+    <div class="card">
+
+        <img src="images/reward.png">
+
+        <h5>Reward Points</h5>
+
+        <h2>2,850</h2>
+
+        <span class="gold">
+
+            Gold Member
+
+        </span>
+
+    </div>
+
+</section>
+
+<!-- =====================================
+            QUICK ACTIONS
+===================================== -->
+
+<section class="quick-actions">
+
+    <h2>
+
+        Quick Actions
+
+    </h2>
+
+    <div class="action-grid">
+
+        <a href="deposit.html" class="action-card">
+
+            <img src="images/deposit1.png">
+
+            <h4>Deposit</h4>
+
+            <p>
+
+                Deposit money instantly.
+
+            </p>
+
+        </a>
+
+        <a href="withdraw.html" class="action-card">
+
+            <img src="images/withdraw1.png">
+
+            <h4>Withdraw</h4>
+
+            <p>
+
+                Withdraw securely.
+
+            </p>
+
+        </a>
+
+        <a href="transfer.html" class="action-card">
+
+            <img src="images/transfer1.png">
+
+            <h4>Transfer</h4>
+
+            <p>
+
+                Send money to anyone.
+
+            </p>
+
+        </a>
+
+        <a href="transaction.html" class="action-card">
+
+            <img src="images/statement1.png">
+
+            <h4>Statement</h4>
+
+            <p>
+
+                View all transactions.
+
+            </p>
+
+        </a>
+
+    </div>
+
+</section>
+
+<!-- =====================================
+            RECENT TRANSACTIONS
+===================================== -->
+
+<section class="transactions-section">
+
+    <div class="section-header">
+
+        <h2>Recent Transactions</h2>
+
+        <a href="transaction.html" class="view-all">
+
+            View All
+
+        </a>
+
+    </div>
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Date</th>
+
+                    <th>Transaction ID</th>
+
+                    <th>Type</th>
+
+                    <th>Amount</th>
+
+                    <th>Status</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+
+                    <td>20 Jul 2026</td>
+
+                    <td>TXN100245</td>
+
+                    <td>Deposit</td>
+
+                    <td class="credit">
+
+                        + ₹20,000
+
+                    </td>
+
+                    <td>
+
+                        <span class="status completed">
+
+                            Completed
+
+                        </span>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>19 Jul 2026</td>
+
+                    <td>TXN100244</td>
+
+                    <td>Transfer</td>
+
+                    <td class="debit">
+
+                        - ₹5,000
+
+                    </td>
+
+                    <td>
+
+                        <span class="status pending">
+
+                            Pending
+
+                        </span>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>18 Jul 2026</td>
+
+                    <td>TXN100243</td>
+
+                    <td>Withdraw</td>
+
+                    <td class="debit">
+
+                        - ₹2,000
+
+                    </td>
+
+                    <td>
+
+                        <span class="status completed">
+
+                            Completed
+
+                        </span>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>17 Jul 2026</td>
+
+                    <td>TXN100242</td>
+
+                    <td>Deposit</td>
+
+                    <td class="credit">
+
+                        + ₹15,000
+
+                    </td>
+
+                    <td>
+
+                        <span class="status completed">
+
+                            Completed
+
+                        </span>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>16 Jul 2026</td>
+
+                    <td>TXN100241</td>
+
+                    <td>UPI Payment</td>
+
+                    <td class="debit">
+
+                        - ₹850
+
+                    </td>
+
+                    <td>
+
+                        <span class="status failed">
+
+                            Failed
+
+                        </span>
+
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+<!-- =====================================
+            BANK SERVICES
+===================================== -->
+
+<section class="services-section">
+
+    <div class="section-header">
+
+        <h2>Banking Services</h2>
+
+    </div>
+
+    <div class="services-grid">
+
+        <div class="service-card">
+
+            <i class="fa-solid fa-money-bill-transfer"></i>
+
+            <h4>Fund Transfer</h4>
+
+            <p>Transfer money instantly to any bank account.</p>
+
+        </div>
+
+        <div class="service-card">
+
+            <i class="fa-solid fa-file-invoice-dollar"></i>
+
+            <h4>Bill Payment</h4>
+
+            <p>Pay electricity, gas, mobile and DTH bills.</p>
+
+        </div>
+
+        <div class="service-card">
+
+            <i class="fa-solid fa-landmark"></i>
+
+            <h4>Loans</h4>
+
+            <p>Apply for Personal, Home and Vehicle loans.</p>
+
+        </div>
+
+        <div class="service-card">
+
+            <i class="fa-solid fa-chart-line"></i>
+
+            <h4>Investments</h4>
+
+            <p>Mutual Funds, Fixed Deposits and SIP plans.</p>
+
+        </div>
+
+        <div class="service-card">
+
+            <i class="fa-solid fa-mobile-screen"></i>
+
+            <h4>Mobile Banking</h4>
+
+            <p>Manage your account securely on your mobile.</p>
+
+        </div>
+
+        <div class="service-card">
+
+            <i class="fa-solid fa-credit-card"></i>
+
+            <h4>Credit Cards</h4>
+
+            <p>Apply for premium credit cards with cashback.</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================
+            SPECIAL OFFERS
+===================================== -->
+
+<section class="offers-section">
+
+    <div class="section-header">
+
+        <h2>Latest Offers</h2>
+
+    </div>
+
+    <div class="offers-grid">
+
+        <div class="offer-card">
+
+            <i class="fa-solid fa-gift"></i>
+
+            <h3>5% Cashback</h3>
+
+            <p>
+
+                Earn 5% cashback on all UPI payments this month.
+
+            </p>
+
+        </div>
+
+        <div class="offer-card">
+
+            <i class="fa-solid fa-plane"></i>
+
+            <h3>Travel Rewards</h3>
+
+            <p>
+
+                Get exciting travel discounts using SecureBank Cards.
+
+            </p>
+
+        </div>
+
+        <div class="offer-card">
+
+            <i class="fa-solid fa-piggy-bank"></i>
+
+            <h3>Fixed Deposit</h3>
+
+            <p>
+
+                Up to 7.50% annual interest on Fixed Deposits.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================
+                FOOTER
+===================================== -->
+
+<footer class="dashboard-footer">
+
+    <div class="footer-left">
+
+        <h3>
+
+            <i class="fa-solid fa-building-columns"></i>
+
+            SecureBank
+
+        </h3>
+
+        <p>
+
+            Your trusted partner for secure, fast and modern digital banking.
+
+        </p>
+
+    </div>
+
+    <div class="footer-center">
+
+        <h4>Quick Links</h4>
+
+        <ul>
+
+            <li><a href="dashboard.html">Dashboard</a></li>
+
+            <li><a href="deposit.html">Deposit</a></li>
+
+            <li><a href="withdraw.html">Withdraw</a></li>
+
+            <li><a href="transfer.html">Transfer</a></li>
+
+            <li><a href="contact.html">Contact</a></li>
+
+        </ul>
+
+    </div>
+
+    <div class="footer-right">
+
+        <h4>Contact</h4>
+
+        <p>
+
+            <i class="fa-solid fa-phone"></i>
+
+            +91 98765 43210
+
+        </p>
+
+        <p>
+
+            <i class="fa-solid fa-envelope"></i>
+
+            support@securebank.com
+
+        </p>
+
+        <p>
+
+            <i class="fa-solid fa-location-dot"></i>
+
+            Mumbai, Maharashtra
+
+        </p>
+
+    </div>
+
+</footer>
+
+<div class="copyright">
+
+    © 2026 SecureBank. All Rights Reserved.
+
+</div>
+
+        </div>
+        <!-- dashboard-content -->
+
+    </main>
+
+</div>
+
+<script src="JS/dashboard.js"></script>
+
+</body>
+
+</html>
