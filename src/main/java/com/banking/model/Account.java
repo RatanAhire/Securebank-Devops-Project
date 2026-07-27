@@ -2,7 +2,7 @@ package com.banking.model;
 
 public class Account {
 
-    private long accountNumber;
+    private String accountNumber;
 
     private int customerId;
 
@@ -22,8 +22,8 @@ public class Account {
 
     // Getters
 
-    public long getAccountNumber() {
-        return accountNumber;
+    public String getAccountNumber() {
+    return accountNumber;
     }
 
     public int getCustomerId() {
@@ -52,8 +52,8 @@ public class Account {
 
     // Setters
 
-    public void setAccountNumber(long accountNumber) {
-        this.accountNumber = accountNumber;
+   public void setAccountNumber(String accountNumber) {
+    this.accountNumber = accountNumber;
     }
 
     public void setCustomerId(int customerId) {
