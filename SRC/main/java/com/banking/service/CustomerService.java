@@ -1,6 +1,6 @@
-package com.securebank.service;
+package com.banking.service;
 
-import com.securebank.model.Customer;
+import com.banking.model.Customer;
 
 public class CustomerService {
 

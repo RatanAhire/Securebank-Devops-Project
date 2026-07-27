@@ -1,4 +1,4 @@
-package com.securebank.filter;
+package com.banking.filter;
 
 import java.io.IOException;
 

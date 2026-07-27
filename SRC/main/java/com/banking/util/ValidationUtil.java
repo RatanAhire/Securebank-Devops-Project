@@ -1,4 +1,4 @@
-package com.securebank.util;
+package com.banking.util;
 
 public class ValidationUtil {
 

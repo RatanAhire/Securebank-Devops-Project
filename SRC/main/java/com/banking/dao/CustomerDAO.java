@@ -1,6 +1,6 @@
-package com.securebank.dao;
+package com.banking.dao;
 
-import com.securebank.model.Customer;
+import com.banking.model.Customer;
 
 public class CustomerDAO {
 

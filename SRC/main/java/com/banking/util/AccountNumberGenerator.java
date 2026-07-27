@@ -1,4 +1,4 @@
-package com.securebank.util;
+package com.banking.util;
 
 import java.util.Random;
 

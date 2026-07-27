@@ -1,9 +1,9 @@
-package com.securebank.dao;
+package com.banking.dao;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.securebank.model.Transaction;
+import com.banking.model.Transaction;
 
 public class TransactionDAO {
 

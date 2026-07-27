@@ -1,4 +1,4 @@
-package com.securebank.servlet;
+package com.banking.servlet;
 
 import java.io.IOException;
 import java.util.ArrayList;
