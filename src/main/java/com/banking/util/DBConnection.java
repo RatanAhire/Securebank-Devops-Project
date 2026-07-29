@@ -10,14 +10,13 @@ public class DBConnection {
             "com.mysql.cj.jdbc.Driver";
 
     private static final String URL =
-            "jdbc:mysql://localhost:3306/Securebank?useSSL=false&serverTimezone=UTC";
+    "jdbc:mysql://localhost:3306/Securebank?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
 
     private static final String USERNAME =
-            "Securebank_user";
+    "Securebank_user";
 
     private static final String PASSWORD =
-            "PUT_YOUR_ACTUAL_PASSWORD_HERE";
-
+    "Devil@20202020";
     private DBConnection() {
 
     }

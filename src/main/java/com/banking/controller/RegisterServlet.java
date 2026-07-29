@@ -94,4 +94,4 @@ public class RegisterServlet extends HttpServlet {
             response.sendRedirect("register.html");
         }
     }
-}
+}   
