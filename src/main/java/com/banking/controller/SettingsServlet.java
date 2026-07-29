@@ -20,7 +20,7 @@ public class SettingsServlet extends HttpServlet {
 
         if (session == null || session.getAttribute("username") == null) {
 
-            response.sendRedirect("login.jsp");
+            response.sendRedirect("login.html");
             return;
 
         }
@@ -28,7 +28,7 @@ public class SettingsServlet extends HttpServlet {
         request.setAttribute("successMessage",
                 "Settings updated successfully.");
 
-        request.getRequestDispatcher("settings.jsp")
+        request.getRequestDispatcher("settings.html")
                 .forward(request, response);
 
     }

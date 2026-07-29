@@ -16,14 +16,14 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 @WebFilter({
-        "/dashboard.jsp",
-        "/profile.jsp",
-        "/deposit.jsp",
-        "/withdraw.jsp",
-        "/transfer.jsp",
-        "/transaction.jsp",
-        "/settings.jsp",
-        "/contact.jsp",
+        "/dashboard.html",
+        "/profile.html",
+        "/deposit.html",
+        "/withdraw.html",
+        "/transfer.html",
+        "/transaction.html",
+        "/settings.html",
+        "/contact.html",
         "/DashboardServlet",
         "/DepositServlet",
         "/WithdrawServlet",
@@ -63,7 +63,7 @@ public class AuthenticationFilter implements Filter {
 
         } else {
 
-            res.sendRedirect(req.getContextPath() + "/login.jsp");
+            res.sendRedirect(req.getContextPath() + "/login.html");
 
         }
 

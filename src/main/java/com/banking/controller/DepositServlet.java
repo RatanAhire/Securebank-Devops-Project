@@ -18,7 +18,7 @@ public class DepositServlet extends HttpServlet {
         HttpSession session = request.getSession(false);
 
         if (session == null || session.getAttribute("username") == null) {
-            response.sendRedirect("login.jsp");
+            response.sendRedirect("login.html");
             return;
         }
 
@@ -29,7 +29,7 @@ public class DepositServlet extends HttpServlet {
             request.setAttribute("errorMessage",
                     "Please enter deposit amount.");
 
-            request.getRequestDispatcher("deposit.jsp")
+            request.getRequestDispatcher("deposit.html")
                    .forward(request, response);
 
             return;
@@ -38,7 +38,7 @@ public class DepositServlet extends HttpServlet {
         request.setAttribute("successMessage",
                 "₹ " + amount + " deposited successfully.");
 
-        request.getRequestDispatcher("deposit.jsp")
+        request.getRequestDispatcher("deposit.html")
                .forward(request, response);
     }
 }

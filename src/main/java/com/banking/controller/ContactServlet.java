@@ -20,7 +20,7 @@ public class ContactServlet extends HttpServlet {
 
         if (session == null || session.getAttribute("username") == null) {
 
-            response.sendRedirect("login.jsp");
+            response.sendRedirect("login.html");
             return;
 
         }
@@ -34,7 +34,7 @@ public class ContactServlet extends HttpServlet {
             request.setAttribute("errorMessage",
                     "Please fill all fields.");
 
-            request.getRequestDispatcher("contact.jsp")
+            request.getRequestDispatcher("contact.html")
                     .forward(request, response);
 
             return;
@@ -44,7 +44,7 @@ public class ContactServlet extends HttpServlet {
         request.setAttribute("successMessage",
                 "Your message has been sent successfully.");
 
-        request.getRequestDispatcher("contact.jsp")
+        request.getRequestDispatcher("contact.html")
                 .forward(request, response);
 
     }

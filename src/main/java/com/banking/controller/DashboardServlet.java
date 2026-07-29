@@ -28,7 +28,7 @@ public class DashboardServlet extends HttpServlet {
         // Check Session
         if (session == null || session.getAttribute("username") == null) {
 
-            response.sendRedirect("login.jsp");
+            response.sendRedirect("login.html");
             return;
         }
 
@@ -51,7 +51,7 @@ public class DashboardServlet extends HttpServlet {
         request.setAttribute("lastLogin",
                 "Today");
 
-        request.getRequestDispatcher("dashboard.jsp")
+        request.getRequestDispatcher("dashboard.html")
                .forward(request, response);
 
     }

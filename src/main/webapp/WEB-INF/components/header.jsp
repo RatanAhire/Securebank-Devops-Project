@@ -19,7 +19,7 @@
 
     <!-- Main CSS -->
     <link rel="stylesheet"
-          href="CSS/style.css">
+          href="css/style.css">
 
     <!-- Google Fonts -->
     <link rel="preconnect"

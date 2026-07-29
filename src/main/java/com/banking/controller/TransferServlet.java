@@ -19,7 +19,7 @@ public class TransferServlet extends HttpServlet {
 
         if (session == null || session.getAttribute("username") == null) {
 
-            response.sendRedirect("login.jsp");
+            response.sendRedirect("login.html");
             return;
 
         }
@@ -33,7 +33,7 @@ public class TransferServlet extends HttpServlet {
             request.setAttribute("errorMessage",
                     "Please enter all required details.");
 
-            request.getRequestDispatcher("transfer.jsp")
+            request.getRequestDispatcher("transfer.html")
                     .forward(request, response);
 
             return;
@@ -43,7 +43,7 @@ public class TransferServlet extends HttpServlet {
         request.setAttribute("successMessage",
                 "₹ " + amount + " transferred successfully.");
 
-        request.getRequestDispatcher("transfer.jsp")
+        request.getRequestDispatcher("transfer.html")
                 .forward(request, response);
 
     }

@@ -18,7 +18,7 @@ public class ProfileServlet extends HttpServlet {
         HttpSession session = request.getSession(false);
 
         if (session == null || session.getAttribute("username") == null) {
-            response.sendRedirect("login.jsp");
+            response.sendRedirect("login.html");
             return;
         }
 
@@ -29,7 +29,7 @@ public class ProfileServlet extends HttpServlet {
         request.setAttribute("accountType", "Savings");
         request.setAttribute("branch", "Mumbai Main Branch");
 
-        request.getRequestDispatcher("profile.jsp")
+        request.getRequestDispatcher("profile.html")
                .forward(request, response);
     }
 }

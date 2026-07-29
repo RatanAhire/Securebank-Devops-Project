@@ -18,7 +18,7 @@ public class WithdrawServlet extends HttpServlet {
         HttpSession session = request.getSession(false);
 
         if (session == null || session.getAttribute("username") == null) {
-            response.sendRedirect("login.jsp");
+            response.sendRedirect("login.html");
             return;
         }
 
@@ -29,7 +29,7 @@ public class WithdrawServlet extends HttpServlet {
             request.setAttribute("errorMessage",
                     "Please enter withdrawal amount.");
 
-            request.getRequestDispatcher("withdraw.jsp")
+            request.getRequestDispatcher("withdraw.html")
                    .forward(request, response);
 
             return;
@@ -38,7 +38,7 @@ public class WithdrawServlet extends HttpServlet {
         request.setAttribute("successMessage",
                 "₹ " + amount + " withdrawn successfully.");
 
-        request.getRequestDispatcher("withdraw.jsp")
+        request.getRequestDispatcher("withdraw.html")
                .forward(request, response);
     }
 }

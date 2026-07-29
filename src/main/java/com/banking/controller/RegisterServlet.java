@@ -35,7 +35,7 @@ public class RegisterServlet extends HttpServlet {
             mobile == null || username == null ||
             password == null || confirmPassword == null) {
 
-            response.sendRedirect("register.jsp");
+            response.sendRedirect("register.html");
             return;
         }
 
@@ -55,37 +55,30 @@ public class RegisterServlet extends HttpServlet {
             password.isEmpty() ||
             confirmPassword.isEmpty()) {
 
-            request.setAttribute("errorMessage",
-                    "All fields are required.");
-
-            request.getRequestDispatcher("register.jsp")
-                   .forward(request, response);
-
+            response.sendRedirect("register.html");
             return;
         }
 
-        // Password Match Validation
+        // Password Validation
         if (!password.equals(confirmPassword)) {
 
-            request.setAttribute("errorMessage",
-                    "Password and Confirm Password do not match.");
-
-            request.getRequestDispatcher("register.jsp")
-                   .forward(request, response);
-
+            response.sendRedirect("register.html");
             return;
         }
 
-        // ============================================
-        // Temporary Registration (Without Database)
-        // ============================================
+        // ===========================================
+        // TODO:
+        // Save user into MySQL Database
+        // ===========================================
 
-        request.setAttribute("successMessage",
-                "Registration Successful! Please Login.");
+        System.out.println("========= NEW USER REGISTERED =========");
+        System.out.println("Name     : " + fullName);
+        System.out.println("Email    : " + email);
+        System.out.println("Mobile   : " + mobile);
+        System.out.println("Username : " + username);
+        System.out.println("=======================================");
 
-        request.getRequestDispatcher("login.jsp")
-               .forward(request, response);
-
+        // Redirect to Login Page
+        response.sendRedirect("login.html");
     }
-
 }

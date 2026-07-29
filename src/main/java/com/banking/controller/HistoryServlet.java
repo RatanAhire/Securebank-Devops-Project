@@ -22,7 +22,7 @@ public class HistoryServlet extends HttpServlet {
 
         if (session == null || session.getAttribute("username") == null) {
 
-            response.sendRedirect("login.jsp");
+            response.sendRedirect("login.html");
             return;
 
         }
@@ -35,7 +35,7 @@ public class HistoryServlet extends HttpServlet {
 
         request.setAttribute("transactions", transactions);
 
-        request.getRequestDispatcher("transaction.jsp")
+        request.getRequestDispatcher("transaction.html")
                 .forward(request, response);
 
     }

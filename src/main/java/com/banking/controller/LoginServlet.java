@@ -30,7 +30,7 @@ public class LoginServlet extends HttpServlet {
         // Null Validation
         if (username == null || password == null) {
 
-            response.sendRedirect("login.jsp");
+            response.sendRedirect("login.html");
             return;
 
         }
@@ -42,44 +42,33 @@ public class LoginServlet extends HttpServlet {
         // Empty Validation
         if (username.isEmpty() || password.isEmpty()) {
 
-            request.setAttribute("errorMessage",
-                    "Username and Password are required.");
-
-            request.getRequestDispatcher("login.jsp")
-                   .forward(request, response);
-
+            response.sendRedirect("login.html");
             return;
 
         }
 
-        // ============================================
+        // ==========================================
         // Temporary Login (Without Database)
-        // ============================================
+        // Username : admin
+        // Password : admin123
+        // ==========================================
 
         if ("admin".equals(username)
                 && "admin123".equals(password)) {
 
             HttpSession session = request.getSession();
 
-            // Session Timeout (30 Minutes)
             session.setMaxInactiveInterval(30 * 60);
 
-            // Store User Information
             session.setAttribute("username", username);
-
-            // Future Use
             session.setAttribute("role", "Customer");
 
             // Redirect to Dashboard
-            response.sendRedirect("dashboard.jsp");
+            response.sendRedirect("dashboard.html");
 
         } else {
 
-            request.setAttribute("errorMessage",
-                    "Invalid Username or Password.");
-
-            request.getRequestDispatcher("login.jsp")
-                   .forward(request, response);
+            response.sendRedirect("login.html");
 
         }
 
