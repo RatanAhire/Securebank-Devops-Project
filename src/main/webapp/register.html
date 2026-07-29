@@ -5,75 +5,73 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Create Account | SecureBank</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 
-    <link rel="stylesheet"
-          href="css/register.css">
+    <link rel="stylesheet" href="css/register.css">
 
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet">
+        rel="stylesheet">
 
 </head>
 
 <body>
 
-<div class="register-container">
+    <div class="register-container">
 
-    <!-- LEFT SIDE -->
+        <!-- LEFT SIDE -->
 
-    <div class="left-panel">
+        <div class="left-panel">
 
-        <div class="left-content">
+            <div class="left-content">
 
-            <img src="images/register-bank.png"
-                 alt="SecureBank">
+                <img src="images/register-bank.png" alt="SecureBank">
 
-            <h1>Welcome to SecureBank</h1>
+                <h1>Welcome to SecureBank</h1>
 
-            <p>
+                <p>
 
-                Join India's modern digital banking platform.
+                    Join India's modern digital banking platform.
 
-                Open your account online, transfer money,
+                    Open your account online, transfer money,
 
-                pay bills, manage your savings and enjoy
+                    pay bills, manage your savings and enjoy
 
-                secure banking anytime, anywhere.
+                    secure banking anytime, anywhere.
 
-            </p>
+                </p>
 
-            <div class="feature-list">
+                <div class="feature-list">
 
-                <div>
+                    <div>
 
-                    <i class="fa-solid fa-shield-halved"></i>
+                        <i class="fa-solid fa-shield-halved"></i>
 
-                    256-bit Secure Banking
+                        256-bit Secure Banking
 
-                </div>
+                    </div>
 
-                <div>
+                    <div>
 
-                    <i class="fa-solid fa-money-bill-transfer"></i>
+                        <i class="fa-solid fa-money-bill-transfer"></i>
 
-                    Instant Fund Transfer
+                        Instant Fund Transfer
 
-                </div>
+                    </div>
 
-                <div>
+                    <div>
 
-                    <i class="fa-solid fa-mobile-screen-button"></i>
+                        <i class="fa-solid fa-mobile-screen-button"></i>
 
-                    Mobile Banking
+                        Mobile Banking
+
+                    </div>
 
                 </div>
 
@@ -81,176 +79,154 @@
 
         </div>
 
-    </div>
+        <!-- RIGHT SIDE -->
 
-    <!-- RIGHT SIDE -->
+        <div class="right-panel">
 
-    <div class="right-panel">
+            <div class="register-card">
 
-        <div class="register-card">
+                <div class="logo">
 
-            <div class="logo">
+                    <i class="fa-solid fa-building-columns"></i>
 
-                <i class="fa-solid fa-building-columns"></i>
+                    <span>SecureBank</span>
 
-                <span>SecureBank</span>
+                </div>
+
+                <h2>Create Your Account</h2>
+
+                <p>
+
+                    Fill in your details to open a SecureBank account.
+
+                </p>
+
+                <form action="RegisterServlet" method="post">
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label>First Name</label>
+
+                            <input type="text" name="firstName" placeholder="Enter First Name" required>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label>Last Name</label>
+
+                            <input type="text" name="lastName" placeholder="Enter Last Name" required>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label>Email Address</label>
+
+                            <input type="email" name="email" placeholder="Enter Email" required>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label>Mobile Number</label>
+
+                            <input type="tel" name="mobile" placeholder="Enter Mobile Number" required>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label>Account Type</label>
+
+                            <select required>
+
+                                <option value="">Select</option>
+
+                                <option>Savings Account</option>
+
+                                <option>Current Account</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label>Aadhaar Number</label>
+
+                            <input type="text" placeholder="Enter Aadhaar Number" required>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label>Password</label>
+
+                            <input type="password" id="password" name="password" placeholder="Create Password" required>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label>Confirm Password</label>
+
+                            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-group full-width">
+
+                        <label>Address</label>
+
+                        <textarea placeholder="Enter Full Address"></textarea>
+
+                    </div>
+
+                    <div class="checkbox">
+
+                        <input type="checkbox" required>
+
+                        <label>
+
+                            I agree to the Terms & Conditions
+
+                        </label>
+                        
+                    </div>
+
+                    <button type="submit" class="register-btn">
+
+                        <i class="fa-solid fa-user-plus"></i>
+
+                        Create Account
+
+                    </button>
+
+                    <div class="login-link">
+
+                        Already have an account?
+
+                        <a href="login.html">
+
+                            Login Here
+
+                        </a>
+
+                    </div>
+
+                </form>
 
             </div>
-
-            <h2>Create Your Account</h2>
-
-            <p>
-
-                Fill in your details to open a SecureBank account.
-
-            </p>
-
-            <form action="RegisterServlet" method="post">
-
-                <div class="form-grid">
-
-                    <div class="form-group">
-
-                        <label>First Name</label>
-
-                        <input type="text"
-                               placeholder="Enter First Name"
-                               required>
-
-                    </div>
-
-                    <div class="form-group">
-
-                        <label>Last Name</label>
-
-                        <input type="text"
-                               placeholder="Enter Last Name"
-                               required>
-
-                    </div>
-
-                    <div class="form-group">
-
-                        <label>Email Address</label>
-
-                        <input type="email"
-                               placeholder="Enter Email"
-                               required>
-
-                    </div>
-
-                    <div class="form-group">
-
-                        <label>Mobile Number</label>
-
-                        <input type="tel"
-                               placeholder="Enter Mobile Number"
-                               required>
-
-                    </div>
-
-                    <div class="form-group">
-
-                        <label>Account Type</label>
-
-                        <select required>
-
-                            <option value="">Select</option>
-
-                            <option>Savings Account</option>
-
-                            <option>Current Account</option>
-
-                        </select>
-
-                    </div>
-
-                    <div class="form-group">
-
-                        <label>Aadhaar Number</label>
-
-                        <input type="text"
-                               placeholder="Enter Aadhaar Number"
-                               required>
-
-                    </div>
-
-                    <div class="form-group">
-
-                        <label>Password</label>
-
-                        <input type="password"
-                               id="password"
-                               placeholder="Create Password"
-                               required>
-
-                    </div>
-
-                    <div class="form-group">
-
-                        <label>Confirm Password</label>
-
-                        <input type="password"
-                               id="confirmPassword"
-                               placeholder="Confirm Password"
-                               required>
-
-                    </div>
-
-                </div>
-
-                <div class="form-group full-width">
-
-                    <label>Address</label>
-
-                    <textarea
-                        placeholder="Enter Full Address"></textarea>
-
-                </div>
-
-                <div class="checkbox">
-
-                    <input type="checkbox"
-                           required>
-
-                    <label>
-
-                        I agree to the Terms & Conditions
-
-                    </label>
-
-                </div>
-
-                <button type="submit"
-                        class="register-btn">
-
-                    <i class="fa-solid fa-user-plus"></i>
-
-                    Create Account
-
-                </button>
-
-                <div class="login-link">
-
-                    Already have an account?
-
-                    <a href="login.html">
-
-                        Login Here
-
-                    </a>
-
-                </div>
-
-            </form>
 
         </div>
 
     </div>
 
-</div>
-
-<script src="JS/validation.js"></script>
+    <script src="JS/validation.js"></script>
 
 </body>
 

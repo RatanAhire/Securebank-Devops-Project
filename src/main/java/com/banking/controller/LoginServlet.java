@@ -1,6 +1,9 @@
 package com.banking.servlet;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,69 +12,64 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.mindrot.jbcrypt.BCrypt;
+
+import com.banking.util.DBConnection;
+
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
-
-    public LoginServlet() {
-        super();
-    }
 
     @Override
     protected void doPost(HttpServletRequest request,
                           HttpServletResponse response)
             throws ServletException, IOException {
 
-        // Get Form Data
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
-        // Null Validation
         if (username == null || password == null) {
-
             response.sendRedirect("login.html");
             return;
-
         }
 
-        // Remove Extra Spaces
         username = username.trim();
         password = password.trim();
 
-        // Empty Validation
         if (username.isEmpty() || password.isEmpty()) {
-
             response.sendRedirect("login.html");
             return;
-
         }
 
-        // ==========================================
-        // Temporary Login (Without Database)
-        // Username : admin
-        // Password : admin123
-        // ==========================================
+        String query = "SELECT password FROM users WHERE username = ?";
 
-        if ("admin".equals(username)
-                && "admin123".equals(password)) {
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
 
-            HttpSession session = request.getSession();
+            stmt.setString(1, username);
+            ResultSet rs = stmt.executeQuery();
 
-            session.setMaxInactiveInterval(30 * 60);
+            if (rs.next()) {
+                String storedHash = rs.getString("password");
 
-            session.setAttribute("username", username);
-            session.setAttribute("role", "Customer");
+                if (BCrypt.checkpw(password, storedHash)) {
+                    HttpSession session = request.getSession();
+                    session.setMaxInactiveInterval(30 * 60);
+                    session.setAttribute("username", username);
+                    session.setAttribute("role", "Customer");
 
-            // Redirect to Dashboard
-            response.sendRedirect("dashboard.html");
+                    response.sendRedirect("dashboard.html");
+                    return;
+                }
+            }
 
-        } else {
-
+            // Invalid username or password
             response.sendRedirect("login.html");
 
+        } catch (Exception e) {
+            e.printStackTrace();
+            response.sendRedirect("login.html");
         }
-
     }
-
 }

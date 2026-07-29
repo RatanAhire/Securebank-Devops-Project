@@ -5,177 +5,167 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Login | SecureBank</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 
-    <link rel="stylesheet"
-          href="css/login.css">
+    <link rel="stylesheet" href="css/login.css">
 
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet">
+        rel="stylesheet">
 
 </head>
 
 <body>
 
-<div class="login-container">
+    <div class="login-container">
 
-    <!-- LEFT -->
+        <!-- LEFT -->
 
-    <div class="left-panel">
+        <div class="left-panel">
 
-        <img src="images/login-bank.png"
-             alt="SecureBank">
+            <img src="images/login-bank.png" alt="SecureBank">
 
-        <h1>Welcome Back!</h1>
-
-        <p>
-
-            Access your SecureBank account securely.
-
-            Transfer money, check balances, pay bills,
-
-            and manage your banking anytime.
-
-        </p>
-
-        <div class="features">
-
-            <div>
-
-                <i class="fa-solid fa-shield-halved"></i>
-
-                Secure Login
-
-            </div>
-
-            <div>
-
-                <i class="fa-solid fa-mobile-screen-button"></i>
-
-                Mobile Banking
-
-            </div>
-
-            <div>
-
-                <i class="fa-solid fa-money-bill-transfer"></i>
-
-                Instant Transfers
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <!-- RIGHT -->
-
-    <div class="right-panel">
-
-        <div class="login-card">
-
-            <div class="logo">
-
-                <i class="fa-solid fa-building-columns"></i>
-
-                <span>SecureBank</span>
-
-            </div>
-
-            <h2>Customer Login</h2>
+            <h1>Welcome Back!</h1>
 
             <p>
 
-                Sign in to continue.
+                Access your SecureBank account securely.
+
+                Transfer money, check balances, pay bills,
+
+                and manage your banking anytime.
 
             </p>
 
-            <form action="LoginServlet" method="post">
+            <div class="features">
 
-                <div class="form-group">
+                <div>
 
-                    <label>Email Address</label>
+                    <i class="fa-solid fa-shield-halved"></i>
 
-                    <input type="email"
-                           placeholder="Enter Email"
-                           required>
+                    Secure Login
 
                 </div>
 
-                <div class="form-group">
+                <div>
 
-                    <label>Password</label>
+                    <i class="fa-solid fa-mobile-screen-button"></i>
 
-                    <div class="password-box">
+                    Mobile Banking
 
-                        <input type="password"
-                               id="password"
-                               placeholder="Enter Password"
-                               required>
+                </div>
 
-                        <i class="fa-solid fa-eye"
-                           id="togglePassword"></i>
+                <div>
+
+                    <i class="fa-solid fa-money-bill-transfer"></i>
+
+                    Instant Transfers
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT -->
+
+        <div class="right-panel">
+
+            <div class="login-card">
+
+                <div class="logo">
+
+                    <i class="fa-solid fa-building-columns"></i>
+
+                    <span>SecureBank</span>
+
+                </div>
+
+                <h2>Customer Login</h2>
+
+                <p>
+
+                    Sign in to continue.
+
+                </p>
+
+                <form action="LoginServlet" method="post">
+
+                    <div class="form-group">
+
+                        <label>Email Address</label>
+
+                        <input type="email" placeholder="Enter Email" required>
 
                     </div>
 
-                </div>
+                    <div class="form-group">
 
-                <div class="options">
+                        <label>Password</label>
 
-                    <label>
+                        <div class="password-box">
 
-                        <input type="checkbox">
+                            <input type="password" id="password" name="password" placeholder="Enter Password" required>
 
-                        Remember Me
+                            <i class="fa-solid fa-eye" id="togglePassword"></i>
 
-                    </label>
+                        </div>
+                        
+                    </div>
 
-                    <a href="#">
+                    <div class="options">
 
-                        Forgot Password?
+                        <label>
 
-                    </a>
+                            <input type="checkbox">
 
-                </div>
+                            Remember Me
 
-                <button type="submit">
+                        </label>
 
-                    <i class="fa-solid fa-right-to-bracket"></i>
+                        <a href="#">
 
-                    Login
+                            Forgot Password?
 
-                </button>
+                        </a>
 
-                <div class="register-link">
+                    </div>
 
-                    New Customer?
+                    <button type="submit">
 
-                    <a href="register.html">
+                        <i class="fa-solid fa-right-to-bracket"></i>
 
-                        Create Account
+                        Login
 
-                    </a>
+                    </button>
 
-                </div>
+                    <div class="register-link">
 
-            </form>
+                        New Customer?
+
+                        <a href="register.html">
+
+                            Create Account
+
+                        </a>
+
+                    </div>
+
+                </form>
+
+            </div>
 
         </div>
 
     </div>
 
-</div>
-
-<script src="JS/login.js"></script>
+    <script src="JS/login.js"></script>
 
 </body>
 
