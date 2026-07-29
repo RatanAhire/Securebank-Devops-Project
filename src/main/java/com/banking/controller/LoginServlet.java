@@ -1,4 +1,4 @@
-package com.banking.servlet;
+package com.banking.controller;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -26,28 +26,28 @@ public class LoginServlet extends HttpServlet {
                           HttpServletResponse response)
             throws ServletException, IOException {
 
-        String username = request.getParameter("username");
+        String email = request.getParameter("email");
         String password = request.getParameter("password");
 
-        if (username == null || password == null) {
+        if (email == null || password == null) {
             response.sendRedirect("login.html");
             return;
         }
 
-        username = username.trim();
+        email = email.trim();
         password = password.trim();
 
-        if (username.isEmpty() || password.isEmpty()) {
+        if (email.isEmpty() || password.isEmpty()) {
             response.sendRedirect("login.html");
             return;
         }
 
-        String query = "SELECT password FROM users WHERE username = ?";
+        String query = "SELECT password FROM users WHERE email = ?";
 
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(query)) {
 
-            stmt.setString(1, username);
+            stmt.setString(1, email);
             ResultSet rs = stmt.executeQuery();
 
             if (rs.next()) {
@@ -56,7 +56,7 @@ public class LoginServlet extends HttpServlet {
                 if (BCrypt.checkpw(password, storedHash)) {
                     HttpSession session = request.getSession();
                     session.setMaxInactiveInterval(30 * 60);
-                    session.setAttribute("username", username);
+                    session.setAttribute("email", email);
                     session.setAttribute("role", "Customer");
 
                     response.sendRedirect("dashboard.html");
@@ -64,7 +64,7 @@ public class LoginServlet extends HttpServlet {
                 }
             }
 
-            // Invalid username or password
+            // Invalid email or password
             response.sendRedirect("login.html");
 
         } catch (Exception e) {
