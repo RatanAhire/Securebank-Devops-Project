@@ -1,4 +1,4 @@
-package com.banking.servlet;
+package com.banking.controller;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -32,7 +32,6 @@ public class RegisterServlet extends HttpServlet {
         String password = request.getParameter("password");
         String confirmPassword = request.getParameter("confirmPassword");
 
-        // Null Validation
         if (firstName == null || lastName == null || email == null ||
             mobile == null ||
             password == null || confirmPassword == null) {
@@ -40,7 +39,6 @@ public class RegisterServlet extends HttpServlet {
             return;
         }
 
-        // Trim inputs
         firstName = firstName.trim();
         lastName = lastName.trim();
         email = email.trim();
@@ -48,18 +46,15 @@ public class RegisterServlet extends HttpServlet {
         password = password.trim();
         confirmPassword = confirmPassword.trim();
 
-        // Empty Validation
         if (firstName.isEmpty() || lastName.isEmpty() || email.isEmpty() ||
-            mobile.isEmpty() || 
+            mobile.isEmpty() ||
             password.isEmpty() || confirmPassword.isEmpty()) {
             response.sendRedirect("register.html");
             return;
         }
 
-        // Combine name after validation
         String fullName = firstName + " " + lastName;
 
-        // Password match check
         if (!password.equals(confirmPassword)) {
             response.sendRedirect("register.html");
             return;
@@ -67,32 +62,27 @@ public class RegisterServlet extends HttpServlet {
 
         try (Connection conn = DBConnection.getConnection()) {
 
-            // Check if username already exists
-            String checkQuery = "SELECT id FROM users WHERE username = ?";
+            String checkQuery = "SELECT id FROM users WHERE email = ?";
             try (PreparedStatement checkStmt = conn.prepareStatement(checkQuery)) {
-                checkStmt.setString(1, username);
+                checkStmt.setString(1, email);
                 ResultSet rs = checkStmt.executeQuery();
                 if (rs.next()) {
-                    // Username already taken
                     response.sendRedirect("register.html");
                     return;
                 }
             }
 
-            // Hash the password before storing
             String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
 
-            // Insert new user
-            String insertQuery = "INSERT INTO users (username, password, email, full_name, mobile, balance) " +
-                                  "VALUES (?, ?, ?, ?, ?, ?)";
+            String insertQuery = "INSERT INTO users (email, password, full_name, mobile, balance) " +
+                                  "VALUES (?, ?, ?, ?, ?)";
 
             try (PreparedStatement insertStmt = conn.prepareStatement(insertQuery)) {
-                insertStmt.setString(1, username);
+                insertStmt.setString(1, email);
                 insertStmt.setString(2, hashedPassword);
-                insertStmt.setString(3, email);
-                insertStmt.setString(4, fullName);
-                insertStmt.setString(5, mobile);
-                insertStmt.setBigDecimal(6, java.math.BigDecimal.ZERO);
+                insertStmt.setString(3, fullName);
+                insertStmt.setString(4, mobile);
+                insertStmt.setBigDecimal(5, java.math.BigDecimal.ZERO);
 
                 insertStmt.executeUpdate();
             }
