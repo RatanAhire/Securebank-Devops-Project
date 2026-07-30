@@ -1,6 +1,7 @@
 package com.banking.controller;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -32,9 +33,9 @@ public class RegisterServlet extends HttpServlet {
         String password = request.getParameter("password");
         String confirmPassword = request.getParameter("confirmPassword");
 
-        if (firstName == null || lastName == null || email == null ||
-            mobile == null ||
-            password == null || confirmPassword == null) {
+        if (firstName == null || lastName == null || email == null
+                || mobile == null || password == null || confirmPassword == null) {
+
             response.sendRedirect("register.html");
             return;
         }
@@ -46,52 +47,78 @@ public class RegisterServlet extends HttpServlet {
         password = password.trim();
         confirmPassword = confirmPassword.trim();
 
-        if (firstName.isEmpty() || lastName.isEmpty() || email.isEmpty() ||
-            mobile.isEmpty() ||
-            password.isEmpty() || confirmPassword.isEmpty()) {
+        if (firstName.isEmpty() || lastName.isEmpty() || email.isEmpty()
+                || mobile.isEmpty() || password.isEmpty()
+                || confirmPassword.isEmpty()) {
+
             response.sendRedirect("register.html");
             return;
         }
-
-        String fullName = firstName + " " + lastName;
 
         if (!password.equals(confirmPassword)) {
             response.sendRedirect("register.html");
             return;
         }
 
+        String fullName = firstName + " " + lastName;
+
         try (Connection conn = DBConnection.getConnection()) {
 
-            String checkQuery = "SELECT id FROM users WHERE email = ?";
-            try (PreparedStatement checkStmt = conn.prepareStatement(checkQuery)) {
-                checkStmt.setString(1, email);
-                ResultSet rs = checkStmt.executeQuery();
-                if (rs.next()) {
-                    response.sendRedirect("register.html");
-                    return;
-                }
+            if (conn == null) {
+                throw new Exception("Database Connection Failed");
+            }
+
+            System.out.println("Database Connected Successfully");
+
+            // Check existing email
+            String checkSql = "SELECT id FROM users WHERE email=?";
+
+            PreparedStatement checkStmt = conn.prepareStatement(checkSql);
+            checkStmt.setString(1, email);
+
+            ResultSet rs = checkStmt.executeQuery();
+
+            if (rs.next()) {
+                System.out.println("Email Already Exists");
+                response.sendRedirect("register.html");
+                return;
             }
 
             String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
 
-            String insertQuery = "INSERT INTO users (email, password, full_name, mobile, balance) " +
-                                  "VALUES (?, ?, ?, ?, ?)";
+            String insertSql =
+                    "INSERT INTO users(username,email,password,full_name,mobile,balance) "
+                    + "VALUES(?,?,?,?,?,?)";
 
-            try (PreparedStatement insertStmt = conn.prepareStatement(insertQuery)) {
-                insertStmt.setString(1, email);
-                insertStmt.setString(2, hashedPassword);
-                insertStmt.setString(3, fullName);
-                insertStmt.setString(4, mobile);
-                insertStmt.setBigDecimal(5, java.math.BigDecimal.ZERO);
+            PreparedStatement ps = conn.prepareStatement(insertSql);
 
-                insertStmt.executeUpdate();
+            // Username generated from email
+            String username = email.substring(0, email.indexOf("@"));
+
+            ps.setString(1, username);
+            ps.setString(2, email);
+            ps.setString(3, hashedPassword);
+            ps.setString(4, fullName);
+            ps.setString(5, mobile);
+            ps.setBigDecimal(6, BigDecimal.ZERO);
+
+            int rows = ps.executeUpdate();
+
+            System.out.println("Rows Inserted : " + rows);
+
+            if (rows > 0) {
+                response.sendRedirect("login.html");
+            } else {
+                response.sendRedirect("register.html");
             }
 
-            response.sendRedirect("login.html");
-
         } catch (Exception e) {
+
             e.printStackTrace();
-            response.sendRedirect("register.html");
+
+            response.setContentType("text/plain");
+
+            e.printStackTrace(response.getWriter());
         }
     }
-}   
+}

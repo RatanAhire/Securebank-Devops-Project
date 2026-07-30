@@ -42,34 +42,56 @@ public class LoginServlet extends HttpServlet {
             return;
         }
 
-        String query = "SELECT password FROM users WHERE email = ?";
+        try (Connection conn = DBConnection.getConnection()) {
 
-        try (Connection conn = DBConnection.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(query)) {
+            if (conn == null) {
+                throw new Exception("Database Connection Failed");
+            }
 
-            stmt.setString(1, email);
-            ResultSet rs = stmt.executeQuery();
+            String sql =
+                    "SELECT username,password,full_name,email,balance "
+                    + "FROM users WHERE email=?";
+
+            PreparedStatement ps = conn.prepareStatement(sql);
+
+            ps.setString(1, email);
+
+            ResultSet rs = ps.executeQuery();
 
             if (rs.next()) {
-                String storedHash = rs.getString("password");
 
-                if (BCrypt.checkpw(password, storedHash)) {
+                String storedPassword = rs.getString("password");
+
+                if (BCrypt.checkpw(password, storedPassword)) {
+
                     HttpSession session = request.getSession();
+
                     session.setMaxInactiveInterval(30 * 60);
-                    session.setAttribute("email", email);
-                    session.setAttribute("role", "Customer");
+
+                    session.setAttribute("username", rs.getString("username"));
+                    session.setAttribute("fullName", rs.getString("full_name"));
+                    session.setAttribute("email", rs.getString("email"));
+                    session.setAttribute("balance", rs.getBigDecimal("balance"));
+
+                    System.out.println("Login Successful");
 
                     response.sendRedirect("dashboard.html");
+
                     return;
                 }
             }
 
-            // Invalid email or password
+            System.out.println("Invalid Login");
+
             response.sendRedirect("login.html");
 
         } catch (Exception e) {
+
             e.printStackTrace();
-            response.sendRedirect("login.html");
+
+            response.setContentType("text/plain");
+
+            e.printStackTrace(response.getWriter());
         }
     }
 }
