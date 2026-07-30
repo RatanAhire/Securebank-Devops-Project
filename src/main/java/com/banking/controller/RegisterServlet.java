@@ -107,9 +107,9 @@ public class RegisterServlet extends HttpServlet {
             System.out.println("Rows Inserted : " + rows);
 
             if (rows > 0) {
-                response.sendRedirect("login.html");
+                response.sendRedirect("login.html?success=1");
             } else {
-                response.sendRedirect("register.html");
+                response.sendRedirect("register.html?error=email");
             }
 
         } catch (Exception e) {
