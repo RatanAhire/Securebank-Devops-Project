@@ -1,6 +1,9 @@
 package com.banking.servlet;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,14 +12,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.banking.util.DBConnection;
+
 @WebServlet("/DashboardServlet")
 public class DashboardServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
-
-    public DashboardServlet() {
-        super();
-    }
 
     @Override
     protected void doGet(HttpServletRequest request,
@@ -25,35 +26,68 @@ public class DashboardServlet extends HttpServlet {
 
         HttpSession session = request.getSession(false);
 
-        // Check Session
-        if (session == null || session.getAttribute("username") == null) {
-
+        if (session == null || session.getAttribute("email") == null) {
             response.sendRedirect("login.html");
             return;
         }
 
-        // Get Logged In User
-        String username = (String) session.getAttribute("username");
+        String email = (String) session.getAttribute("email");
 
-        // Pass Data to JSP
-        request.setAttribute("welcomeMessage",
-                "Welcome, " + username + "!");
+        try (Connection conn = DBConnection.getConnection()) {
 
-        request.setAttribute("accountNumber",
-                "SB20260001");
+            String sql =
+                    "SELECT id, username, full_name, email, balance FROM users WHERE email=?";
 
-        request.setAttribute("accountType",
-                "Savings Account");
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, email);
 
-        request.setAttribute("availableBalance",
-                "₹ 1,25,000");
+            ResultSet rs = ps.executeQuery();
 
-        request.setAttribute("lastLogin",
-                "Today");
+            if (rs.next()) {
 
-        request.getRequestDispatcher("dashboard.html")
-               .forward(request, response);
+                int id = rs.getInt("id");
+                String username = rs.getString("username");
+                String fullName = rs.getString("full_name");
+                double balance = rs.getDouble("balance");
 
+                // Generate Account Number
+                String accountNumber = "SB2026" + String.format("%06d", id);
+
+                request.setAttribute("welcomeMessage",
+                        "Welcome, " + fullName);
+
+                request.setAttribute("accountNumber",
+                        accountNumber);
+
+                request.setAttribute("username",
+                        username);
+
+                request.setAttribute("email",
+                        email);
+
+                request.setAttribute("availableBalance",
+                        "₹ " + balance);
+
+                request.setAttribute("accountType",
+                        "Savings Account");
+
+                request.setAttribute("lastLogin",
+                        "Today");
+
+                request.getRequestDispatcher("dashboard.jsp")
+                       .forward(request, response);
+
+            } else {
+
+                response.sendRedirect("login.html");
+
+            }
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+            response.sendRedirect("login.html");
+
+        }
     }
-
 }

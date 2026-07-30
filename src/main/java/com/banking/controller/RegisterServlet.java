@@ -86,21 +86,35 @@ public class RegisterServlet extends HttpServlet {
 
             String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
 
-            String insertSql =
-                    "INSERT INTO users(username,email,password,full_name,mobile,balance) "
-                    + "VALUES(?,?,?,?,?,?)";
+            String accountNumber = "SB2026" + String.format("%06d", (int)(Math.random()*1000000));
+
+            String insertQuery =
+                  "INSERT INTO users(username,password,full_name,mobile,email,balance,account_number,account_type,aadhaar,address) VALUES (?,?,?,?,?,?,?,?,?,?)";
 
             PreparedStatement ps = conn.prepareStatement(insertSql);
 
             // Username generated from email
             String username = email.substring(0, email.indexOf("@"));
 
-            ps.setString(1, username);
-            ps.setString(2, email);
-            ps.setString(3, hashedPassword);
-            ps.setString(4, fullName);
-            ps.setString(5, mobile);
-            ps.setBigDecimal(6, BigDecimal.ZERO);
+            insertStmt.setString(1, username);
+
+            insertStmt.setString(2, hashedPassword);
+
+            insertStmt.setString(3, fullName);
+
+            insertStmt.setString(4, mobile);
+
+            insertStmt.setString(5, email);
+
+            insertStmt.setBigDecimal(6, BigDecimal.ZERO);
+
+            insertStmt.setString(7, accountNumber);
+
+            insertStmt.setString(8, accountType);
+
+            insertStmt.setString(9, aadhaar);
+
+            insertStmt.setString(10, address);
 
             int rows = ps.executeUpdate();
 
