@@ -33,8 +33,13 @@ public class RegisterServlet extends HttpServlet {
         String password = request.getParameter("password");
         String confirmPassword = request.getParameter("confirmPassword");
 
+        String accountType = request.getParameter("accountType");
+        String aadhaar = request.getParameter("aadhaar");
+        String address = request.getParameter("address");
+
         if (firstName == null || lastName == null || email == null
-                || mobile == null || password == null || confirmPassword == null) {
+                || mobile == null || password == null
+                || confirmPassword == null) {
 
             response.sendRedirect("register.html");
             return;
@@ -47,8 +52,18 @@ public class RegisterServlet extends HttpServlet {
         password = password.trim();
         confirmPassword = confirmPassword.trim();
 
-        if (firstName.isEmpty() || lastName.isEmpty() || email.isEmpty()
-                || mobile.isEmpty() || password.isEmpty()
+        if (accountType == null)
+            accountType = "Savings Account";
+
+        if (aadhaar == null)
+            aadhaar = "";
+
+        if (address == null)
+            address = "";
+
+        if (firstName.isEmpty() || lastName.isEmpty()
+                || email.isEmpty() || mobile.isEmpty()
+                || password.isEmpty()
                 || confirmPassword.isEmpty()) {
 
             response.sendRedirect("register.html");
@@ -70,60 +85,60 @@ public class RegisterServlet extends HttpServlet {
 
             System.out.println("Database Connected Successfully");
 
-            // Check existing email
             String checkSql = "SELECT id FROM users WHERE email=?";
 
-            PreparedStatement checkStmt = conn.prepareStatement(checkSql);
-            checkStmt.setString(1, email);
+            try (PreparedStatement checkStmt = conn.prepareStatement(checkSql)) {
 
-            ResultSet rs = checkStmt.executeQuery();
+                checkStmt.setString(1, email);
 
-            if (rs.next()) {
-                System.out.println("Email Already Exists");
-                response.sendRedirect("register.html");
-                return;
+                ResultSet rs = checkStmt.executeQuery();
+
+                if (rs.next()) {
+                    System.out.println("Email Already Exists");
+                    response.sendRedirect("register.html?error=email");
+                    return;
+                }
             }
 
-            String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
+            String hashedPassword =
+                    BCrypt.hashpw(password, BCrypt.gensalt());
 
-            String accountNumber = "SB2026" + String.format("%06d", (int)(Math.random()*1000000));
+            String accountNumber =
+                    "SB2026" + String.format("%06d",
+                    (int) (Math.random() * 1000000));
 
-            String insertQuery =
-                  "INSERT INTO users(username,password,full_name,mobile,email,balance,account_number,account_type,aadhaar,address) VALUES (?,?,?,?,?,?,?,?,?,?)";
+            String username =
+                    email.substring(0, email.indexOf("@"));
 
-            PreparedStatement ps = conn.prepareStatement(insertSql);
+            String insertSql =
+                    "INSERT INTO users "
+                    + "(username,password,full_name,mobile,email,balance,"
+                    + "account_number,account_type,aadhaar,address) "
+                    + "VALUES (?,?,?,?,?,?,?,?,?,?)";
 
-            // Username generated from email
-            String username = email.substring(0, email.indexOf("@"));
+            try (PreparedStatement insertStmt =
+                    conn.prepareStatement(insertSql)) {
 
-            insertStmt.setString(1, username);
+                insertStmt.setString(1, username);
+                insertStmt.setString(2, hashedPassword);
+                insertStmt.setString(3, fullName);
+                insertStmt.setString(4, mobile);
+                insertStmt.setString(5, email);
+                insertStmt.setBigDecimal(6, BigDecimal.ZERO);
+                insertStmt.setString(7, accountNumber);
+                insertStmt.setString(8, accountType);
+                insertStmt.setString(9, aadhaar);
+                insertStmt.setString(10, address);
 
-            insertStmt.setString(2, hashedPassword);
+                int rows = insertStmt.executeUpdate();
 
-            insertStmt.setString(3, fullName);
+                System.out.println("Rows Inserted : " + rows);
 
-            insertStmt.setString(4, mobile);
-
-            insertStmt.setString(5, email);
-
-            insertStmt.setBigDecimal(6, BigDecimal.ZERO);
-
-            insertStmt.setString(7, accountNumber);
-
-            insertStmt.setString(8, accountType);
-
-            insertStmt.setString(9, aadhaar);
-
-            insertStmt.setString(10, address);
-
-            int rows = ps.executeUpdate();
-
-            System.out.println("Rows Inserted : " + rows);
-
-            if (rows > 0) {
-                response.sendRedirect("login.html?success=1");
-            } else {
-                response.sendRedirect("register.html?error=email");
+                if (rows > 0) {
+                    response.sendRedirect("login.html?success=1");
+                } else {
+                    response.sendRedirect("register.html?error=insert");
+                }
             }
 
         } catch (Exception e) {
@@ -131,7 +146,6 @@ public class RegisterServlet extends HttpServlet {
             e.printStackTrace();
 
             response.setContentType("text/plain");
-
             e.printStackTrace(response.getWriter());
         }
     }

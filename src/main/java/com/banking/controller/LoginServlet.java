@@ -48,49 +48,43 @@ public class LoginServlet extends HttpServlet {
                 throw new Exception("Database Connection Failed");
             }
 
-            String sql =
-                    "SELECT username,password,full_name,email,balance "
-                    + "FROM users WHERE email=?";
+            String query =
+                    "SELECT full_name, account_number, account_type, balance, password " +
+                    "FROM users WHERE email=?";
 
-            PreparedStatement ps = conn.prepareStatement(sql);
-
+            PreparedStatement ps = conn.prepareStatement(query);
             ps.setString(1, email);
 
             ResultSet rs = ps.executeQuery();
 
             if (rs.next()) {
 
-                String storedPassword = rs.getString("password");
+                String storedHash = rs.getString("password");
 
-                if (BCrypt.checkpw(password, storedPassword)) {
+                if (BCrypt.checkpw(password, storedHash)) {
 
                     HttpSession session = request.getSession();
-
                     session.setMaxInactiveInterval(30 * 60);
 
-                    session.setAttribute("username", rs.getString("username"));
+                    session.setAttribute("email", email);
                     session.setAttribute("fullName", rs.getString("full_name"));
-                    session.setAttribute("email", rs.getString("email"));
+                    session.setAttribute("accountNumber", rs.getString("account_number"));
+                    session.setAttribute("accountType", rs.getString("account_type"));
                     session.setAttribute("balance", rs.getBigDecimal("balance"));
 
-                    System.out.println("Login Successful");
-
-                    response.sendRedirect("dashboard.html");
-
+                    response.sendRedirect("DashboardServlet");
                     return;
                 }
             }
 
             System.out.println("Invalid Login");
-
-            response.sendRedirect("login.html");
+            response.sendRedirect("login.html?error=invalid");
 
         } catch (Exception e) {
 
             e.printStackTrace();
 
             response.setContentType("text/plain");
-
             e.printStackTrace(response.getWriter());
         }
     }
